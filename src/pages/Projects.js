@@ -1,7 +1,9 @@
 import React from 'react'
 
 const Projects = () => (
-    <h2>Projects</h2>
+    <div className='container'>
+        <div className='sentence'>Projects</div>
+    </div>
 )
 
 export default Projects

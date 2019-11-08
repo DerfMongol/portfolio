@@ -1,0 +1,55 @@
+.container {
+    margin: 100px 50px;
+}
+.sentence {
+    font-size: 72px;
+    text-align: center;
+}
+.hover-skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.hover-skills div {
+    font-size: 48px;
+}
+.article {
+    font-size: 72px;
+    text-align: center;
+    width: 80px;
+   
+}
+.skill {
+    font-size: 72px;
+    text-align: center;
+    width: 350px;
+    color: rgb(255, 102, 0);
+}
+.skills {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+.image {
+    padding: 20px;
+    width: 80px;
+    height: 80px;
+}
+.express {
+    padding: 20px;
+    width: 120px;
+    height: 80px;
+}
+.image:hover {
+    margin: -10px;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+}
+.express:hover {
+    margin: -10px;
+    cursor: pointer;
+    width: 140px;
+    height: 100px;
+}
