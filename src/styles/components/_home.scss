@@ -1,5 +1,6 @@
 .container {
     margin: 100px 50px;
+    z-index: -1;
 }
 .sentence {
     font-size: 72px;
@@ -32,24 +33,47 @@
     flex-wrap: wrap;
 }
 .image {
+    margin: 20px;
     padding: 20px;
+    
+    border-radius: 80px;
+    border: 1px solid black;
+}
+
+.image img {
     width: 80px;
     height: 80px;
 }
+
 .express {
+    margin: 20px;
     padding: 20px;
+    border-radius: 80px;
+    border: 1px solid black;
+}
+
+.express img {
     width: 120px;
     height: 80px;
 }
+
+.clicked {
+    background: rgb(197, 247, 104);
+}
+
 .image:hover {
-    margin: -10px;
+    margin: 10px;
     cursor: pointer;
     width: 100px;
     height: 100px;
+    box-shadow: 5px 5px grey;
+    text-align: center;
 }
 .express:hover {
-    margin: -10px;
+    margin: 10px;
     cursor: pointer;
     width: 140px;
     height: 100px;
+    box-shadow: 5px 5px grey;
+    text-align: center;
 }

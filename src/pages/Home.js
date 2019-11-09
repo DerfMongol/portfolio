@@ -8,10 +8,42 @@ import reactNat from '../images/reactNat.png'
 import express from '../images/main-qimg-f406db5658b5d0dade4d70a989560439.png'
 
 import ProjectBox from '../components/ProjectBox'
+import ImageContainer from '../components/ImageContainer'
+import { PROJECTS } from '../data/data.js'
 
 const Home = () => {
     const [skill, setSkill] = useState('Full Stack Web')
     const [article, setArticle] = useState('a')
+    const [clicked, setClicked] = useState(['', '', '', '', '', ''])
+    const [filterKey, setFilterKey] = useState([
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    ])
+
+    function imageClick(data) {
+        const copy = [...filterKey]
+        const copyClick = [...clicked]
+
+        copy[data] = !filterKey[data]
+        setFilterKey(copy)
+
+        if (clicked[data] === '') {
+            copyClick[data] = 'clicked'
+            setClicked(copyClick)
+        } else {
+            copyClick[data] = ''
+            setClicked(copyClick)
+        }
+    }
+
+    function imageReset() {
+        const reset = ['', '', '', '', '', '']
+        setClicked(reset)
+    }
 
     function imageHover(skill, article) {
         setSkill(skill)
@@ -29,52 +61,68 @@ const Home = () => {
             </div>
 
             <div className='skills'>
-                <img
-                    className='image'
-                    src={html}
-                    alt='logo'
-                    onMouseEnter={() => imageHover('HTML', 'a')}
+                <ImageContainer
+                    clicked={clicked}
+                    file={html}
+                    imageClick={imageClick}
+                    imageHover={imageHover}
+                    name={'HTML'}
+                    nouns={'a'}
+                    index={0}
+                    firstClass={'image'}
                 />
-                <img
-                    className='image'
-                    src={css}
-                    alt='logo'
-                    onMouseEnter={() => imageHover('CSS', 'a')}
+                <ImageContainer
+                    clicked={clicked}
+                    file={css}
+                    imageClick={imageClick}
+                    imageHover={imageHover}
+                    name={'CSS'}
+                    nouns={'a'}
+                    index={1}
+                    firstClass={'image'}
                 />
-                <img
-                    className='image'
-                    src={js}
-                    alt='logo'
-                    onMouseEnter={() => imageHover('JavaScript', 'a')}
+                <ImageContainer
+                    clicked={clicked}
+                    file={js}
+                    imageClick={imageClick}
+                    imageHover={imageHover}
+                    name={'JavaScript'}
+                    nouns={'a'}
+                    index={2}
+                    firstClass={'image'}
                 />
-
-                <img
-                    className='image'
-                    src={react}
-                    alt='logo'
-                    onMouseEnter={() => imageHover('React', 'a')}
+                <ImageContainer
+                    clicked={clicked}
+                    file={react}
+                    imageClick={imageClick}
+                    imageHover={imageHover}
+                    name={'React'}
+                    nouns={'a'}
+                    index={3}
+                    firstClass={'image'}
                 />
-                <img
-                    className='image'
-                    src={reactNat}
-                    alt='logo'
-                    onMouseEnter={() => imageHover('React Native', 'a')}
+                <ImageContainer
+                    clicked={clicked}
+                    file={reactNat}
+                    imageClick={imageClick}
+                    imageHover={imageHover}
+                    name={'React Native'}
+                    nouns={'a'}
+                    index={4}
+                    firstClass={'image'}
                 />
-
-                <img
-                    className='express'
-                    src={express}
-                    alt='logo'
-                    onMouseEnter={() => imageHover('Express', 'an')}
+                <ImageContainer
+                    clicked={clicked}
+                    file={express}
+                    imageClick={imageClick}
+                    imageHover={imageHover}
+                    name={'Express'}
+                    nouns={'an'}
+                    index={5}
+                    firstClass={'express'}
                 />
             </div>
-            <div className='projects'>
-                <ProjectBox title='GoatRelic' />
-                <ProjectBox title='MealsApp' />
-                <ProjectBox title='TodoApp' />
-                <ProjectBox title='WeatherApp' />
-                <ProjectBox title='UniversalReactServer' />
-            </div>
+            <div className='projects'></div>
         </div>
     )
 }
