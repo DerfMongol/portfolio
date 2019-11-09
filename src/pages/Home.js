@@ -23,10 +23,12 @@ const Home = () => {
         false,
         false
     ])
+    const [filterList, setFilterList] = useState([])
 
     function imageClick(data) {
         const copy = [...filterKey]
         const copyClick = [...clicked]
+        const copyFilter = []
 
         copy[data] = !filterKey[data]
         setFilterKey(copy)
@@ -38,6 +40,18 @@ const Home = () => {
             copyClick[data] = ''
             setClicked(copyClick)
         }
+
+        PROJECTS.forEach(project => {
+            project.list.some((data, index) => {
+                if (!data && copy[index]) {
+                    return true
+                }
+                if (index === 5) {
+                    copyFilter.push(project.title)
+                }
+            })
+        })
+        setFilterList(copyFilter)
     }
 
     function imageReset() {
@@ -122,7 +136,11 @@ const Home = () => {
                     firstClass={'express'}
                 />
             </div>
-            <div className='projects'></div>
+            <div className='projects'>
+                {filterList.map((project, index) => (
+                    <ProjectBox key={index} title={project} />
+                ))}
+            </div>
         </div>
     )
 }

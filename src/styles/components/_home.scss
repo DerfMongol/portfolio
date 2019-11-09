@@ -35,7 +35,6 @@
 .image {
     margin: 20px;
     padding: 20px;
-    
     border-radius: 80px;
     border: 1px solid black;
 }
@@ -61,6 +60,11 @@
     background: rgb(197, 247, 104);
 }
 
+
+    
+  
+  
+
 .image:hover {
     margin: 10px;
     cursor: pointer;
@@ -68,6 +72,8 @@
     height: 100px;
     box-shadow: 5px 5px grey;
     text-align: center;
+    animation-duration: 0.5s;
+    animation-name: grow;
 }
 .express:hover {
     margin: 10px;
@@ -76,4 +82,34 @@
     height: 100px;
     box-shadow: 5px 5px grey;
     text-align: center;
+    animation-duration: 0.5s;
+    animation-name: grow-express;
 }
+
+@keyframes grow {
+    from {
+        margin: 20px;
+        width: 80px;
+        height: 80px; 
+    }
+  
+    to {
+        margin: 10px;
+        width: 100px;
+        height: 100px;
+    }
+  }
+
+  @keyframes grow-express {
+    from {
+        margin: 20px;
+        width: 120px;
+        height: 80px; 
+    }
+  
+    to {
+        margin: 10px;
+        width: 140px;
+        height: 100px;
+    }
+  }
