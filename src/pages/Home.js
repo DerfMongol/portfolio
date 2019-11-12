@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import html from '../images/HTML5_Logo_256.png'
 import css from '../images/css3.png'
@@ -15,6 +15,8 @@ const Home = () => {
     const [skill, setSkill] = useState('Full Stack Web')
     const [article, setArticle] = useState('a')
     const [clicked, setClicked] = useState(['', '', '', '', '', ''])
+    const [filterList, setFilterList] = useState([])
+    const [show, setShow] = useState([])
     const [filterKey, setFilterKey] = useState([
         false,
         false,
@@ -23,7 +25,6 @@ const Home = () => {
         false,
         false
     ])
-    const [filterList, setFilterList] = useState([])
 
     function imageClick(data) {
         const copy = [...filterKey]
@@ -52,7 +53,10 @@ const Home = () => {
             })
         })
         setFilterList(copyFilter)
+        setShow(show => !show)
     }
+
+    // useEffect(() => {})
 
     function imageReset() {
         const reset = ['', '', '', '', '', '']
@@ -138,7 +142,7 @@ const Home = () => {
             </div>
             <div className='projects'>
                 {filterList.map((project, index) => (
-                    <ProjectBox key={index} title={project} />
+                    <ProjectBox show={show} key={index} title={project} />
                 ))}
             </div>
         </div>
