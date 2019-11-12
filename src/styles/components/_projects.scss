@@ -10,23 +10,35 @@
     padding: 100px;
     border: 2px solid black;
     border-radius: 30px;
+    width: 100px;
 }
 
 @keyframes fadeIn {
     0% {
-      opacity: 0;
+        opacity: 0;
+        width: 0;
+        margin: 0;
+        padding: 0;
     }
     100% {
-      opacity: 1;
+        opacity: 1;
+        width: 100px;
+        margin: 10px;
+        padding: 100px;
     }
-  }
-  
-  @keyframes fadeOut {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
+}
 
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        width: 100px;
+        margin: 10px;
+        padding: 100px;
+    }
+    100% {
+        opacity: 0;
+        width: 0;
+        margin: 0;
+        padding: 0;
+    }
+}

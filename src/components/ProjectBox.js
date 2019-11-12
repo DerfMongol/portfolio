@@ -15,7 +15,7 @@ const ProjectBox = props => {
         render && (
             <div
                 className='project'
-                style={{ animation: `${props.show ? 'fadeIn' : 'fadeOut'} 0.3s` }}
+                style={{ animation: `${props.show ? 'fadeIn' : 'fadeOut'} 1s` }}
                 onAnimationEnd={onAnimationEnd}
             >
                 {props.title}

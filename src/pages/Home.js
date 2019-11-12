@@ -16,7 +16,7 @@ const Home = () => {
     const [article, setArticle] = useState('a')
     const [clicked, setClicked] = useState(['', '', '', '', '', ''])
     const [filterList, setFilterList] = useState([])
-    const [show, setShow] = useState([])
+    const [show, setShow] = useState()
     const [filterKey, setFilterKey] = useState([
         false,
         false,
@@ -30,6 +30,14 @@ const Home = () => {
         const copy = [...filterKey]
         const copyClick = [...clicked]
         const copyFilter = []
+        const copyShow = [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
 
         copy[data] = !filterKey[data]
         setFilterKey(copy)
@@ -42,18 +50,20 @@ const Home = () => {
             setClicked(copyClick)
         }
 
-        PROJECTS.forEach(project => {
+        PROJECTS.forEach((project, index1) => {
+            copyFilter.push(project.title)
             project.list.some((data, index) => {
                 if (!data && copy[index]) {
                     return true
                 }
                 if (index === 5) {
-                    copyFilter.push(project.title)
+                    copyShow[index1] = true
+                    
                 }
             })
         })
         setFilterList(copyFilter)
-        setShow(show => !show)
+        setShow(copyShow)
     }
 
     // useEffect(() => {})
@@ -142,7 +152,7 @@ const Home = () => {
             </div>
             <div className='projects'>
                 {filterList.map((project, index) => (
-                    <ProjectBox show={show} key={index} title={project} />
+                    <ProjectBox show={show[index]} key={index} title={project} />
                 ))}
             </div>
         </div>
