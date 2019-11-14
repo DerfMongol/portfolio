@@ -1,13 +1,25 @@
+.skills {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
 .image {
     margin: 20px;
     padding: 10px;
     border-radius: 80px;
     border: 1px solid black;
+    position: relative;
+    
 }
 
 .image img {
     width: 60px;
     height: 60px;
+    
 }
 
 .express {
@@ -26,51 +38,32 @@
     background: rgb(197, 247, 104);
 }
 
-.image:hover {
-    margin: 10px;
-    cursor: pointer;
-    width: 80px;
-    height: 80px;
+.image:hover,
+.express:hover  {
+    transform: scale(1.1);
     box-shadow: 5px 5px grey;
-    text-align: center;
+    cursor: pointer;
     animation-duration: 0.5s;
     animation-name: grow;
 }
-.express:hover {
-    margin: 10px;
-    cursor: pointer;
-    width: 120px;
-    height: 80px;
-    box-shadow: 5px 5px grey;
-    text-align: center;
+
+
+.image:hover img,
+.express:hover img {
+    transform: scale(1.1);
     animation-duration: 0.5s;
-    animation-name: grow-express;
+    animation-name: grow;
 }
+
 
 @keyframes grow {
     from {
-        margin: 20px;
-        width: 60px;
-        height: 60px; 
+        transform: scale(1);
     }
   
     to {
-        margin: 10px;
-        width: 80px;
-        height: 80px;
+        transform: scale(1.1);
     }
   }
 
-  @keyframes grow-express {
-    from {
-        margin: 20px;
-        width: 100px;
-        height: 60px; 
-    }
   
-    to {
-        margin: 10px;
-        width: 120px;
-        height: 80px;
-    }
-  }
