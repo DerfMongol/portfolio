@@ -51,7 +51,7 @@ const Home = () => {
         }
 
         PROJECTS.forEach((project, index1) => {
-            copyFilter.push(project.title)
+            copyFilter.push({title: project.title, pic: project.pic})
             project.list.some((data, index) => {
                 if (!data && copy[index]) {
                     return true
@@ -152,7 +152,7 @@ const Home = () => {
             </div>
             <div className='projects'>
                 {filterList.map((project, index) => (
-                    <ProjectBox show={show[index]} key={index} title={project} />
+                    <ProjectBox show={show[index]} key={index} title={project.title} pic={project.pic} />
                 ))}
             </div>
         </div>

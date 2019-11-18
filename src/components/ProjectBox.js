@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 
 const ProjectBox = props => {
     const [render, setRender] = useState(props.show)
@@ -15,7 +15,10 @@ const ProjectBox = props => {
         render && (
             <div
                 className='project'
-                style={{ animation: `${props.show ? 'fadeIn' : 'fadeOut'} 1s` }}
+                style={{
+                    animation: `${props.show ? 'fadeIn' : 'fadeOut'} 1s`,
+                    backgroundImage: `url(${props.pic})`
+                }}
                 onAnimationEnd={onAnimationEnd}
             >
                 {props.title}
