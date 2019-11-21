@@ -1,15 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
-import html from '../images/HTML5_Logo_256.png'
-import css from '../images/css3.png'
-import js from '../images/js-small.gif'
-import react from '../images/react.png'
-import reactNat from '../images/reactNat.png'
-import express from '../images/main-qimg-f406db5658b5d0dade4d70a989560439.png'
-
 import ProjectBox from '../components/ProjectBox'
 import ImageContainer from '../components/ImageContainer'
-import { PROJECTS } from '../data/data.js'
+import { PROJECTS, SKILLS } from '../data/data.js'
 
 const Home = () => {
     const [skill, setSkill] = useState('Full Stack Web')
@@ -30,14 +23,7 @@ const Home = () => {
         const copy = [...filterKey]
         const copyClick = [...clicked]
         const copyFilter = []
-        const copyShow = [
-            false,
-            false,
-            false,
-            false,
-            false,
-            false
-        ]
+        const copyShow = [false, false, false, false, false, false]
 
         copy[data] = !filterKey[data]
         setFilterKey(copy)
@@ -51,14 +37,13 @@ const Home = () => {
         }
 
         PROJECTS.forEach((project, index1) => {
-            copyFilter.push({title: project.title, pic: project.pic})
+            copyFilter.push({ title: project.title, pic: project.pic })
             project.list.some((data, index) => {
                 if (!data && copy[index]) {
                     return true
                 }
                 if (index === 5) {
                     copyShow[index1] = true
-                    
                 }
             })
         })
@@ -89,70 +74,28 @@ const Home = () => {
             </div>
 
             <div className='skills'>
-                <ImageContainer
-                    clicked={clicked}
-                    file={html}
-                    imageClick={imageClick}
-                    imageHover={imageHover}
-                    name={'HTML'}
-                    nouns={'a'}
-                    index={0}
-                    firstClass={'image'}
-                />
-                <ImageContainer
-                    clicked={clicked}
-                    file={css}
-                    imageClick={imageClick}
-                    imageHover={imageHover}
-                    name={'CSS'}
-                    nouns={'a'}
-                    index={1}
-                    firstClass={'image'}
-                />
-                <ImageContainer
-                    clicked={clicked}
-                    file={js}
-                    imageClick={imageClick}
-                    imageHover={imageHover}
-                    name={'JavaScript'}
-                    nouns={'a'}
-                    index={2}
-                    firstClass={'image'}
-                />
-                <ImageContainer
-                    clicked={clicked}
-                    file={react}
-                    imageClick={imageClick}
-                    imageHover={imageHover}
-                    name={'React'}
-                    nouns={'a'}
-                    index={3}
-                    firstClass={'image'}
-                />
-                <ImageContainer
-                    clicked={clicked}
-                    file={reactNat}
-                    imageClick={imageClick}
-                    imageHover={imageHover}
-                    name={'React Native'}
-                    nouns={'a'}
-                    index={4}
-                    firstClass={'image'}
-                />
-                <ImageContainer
-                    clicked={clicked}
-                    file={express}
-                    imageClick={imageClick}
-                    imageHover={imageHover}
-                    name={'Express'}
-                    nouns={'an'}
-                    index={5}
-                    firstClass={'express'}
-                />
+                {SKILLS.map(skill => (
+                    <ImageContainer
+                        key={skill.id}
+                        clicked={clicked}
+                        file={skill.file}
+                        imageClick={imageClick}
+                        imageHover={imageHover}
+                        name={skill.name}
+                        nouns={skill.noun}
+                        index={skill.id}
+                        firstClass={skill.cssClass}
+                    />
+                ))}
             </div>
             <div className='projects'>
                 {filterList.map((project, index) => (
-                    <ProjectBox show={show[index]} key={index} title={project.title} pic={project.pic} />
+                    <ProjectBox
+                        show={show[index]}
+                        key={index}
+                        title={project.title}
+                        pic={project.pic}
+                    />
                 ))}
             </div>
         </div>
