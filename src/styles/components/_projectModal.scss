@@ -1,0 +1,23 @@
+.backdrop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.514);
+    padding: 50;
+  }
+
+  .modal {
+    z-index: 4;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    padding: 30px;
+  }

@@ -28,34 +28,14 @@
     background: rgba(71, 70, 70, 0.842);
     border-radius: 30px;
     align-items: center;
+    animation-name: slowEnter;
+    animation-duration: 1s;
     justify-content: center;
     cursor: pointer;
 }
 
 .project:hover {
-    transform: scale(1.1);
-}
-
-@keyframes expandFull {
-    0% {
-        background: rgba(71, 70, 70, 0.842);
-        transform: scale(1);
-    }
-    100% {
-        background: lime;
-        transform: scale(1.9);
-    }
-}
-
-@keyframes bringBack {
-    0% {
-        background: lime;
-        transform: scale(1.9);
-    }
-    100% {
-        background: rgba(71, 70, 70, 0.842);
-        transform: scale(1);
-    }
+    transform: scale(1);
 }
 
 @keyframes fadeIn {
@@ -92,11 +72,4 @@
     }
 }
 
-@keyframes slowEnter {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
+

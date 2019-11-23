@@ -4,7 +4,7 @@ const ProjectBox = props => {
     const [render, setRender] = useState(props.show)
     const [showTitle, setShowTitle] = useState('')
     const [overlay, setOverlay] = useState('')
-    const [overlayAnimation, setOverlayAnimation] = useState(false)
+    
 
     useEffect(() => {
         if (props.show) setRender(true)
@@ -20,7 +20,7 @@ const ProjectBox = props => {
     }
 
     function overlayClick() {
-        setOverlayAnimation(!overlayAnimation)
+        props.setOverlayAnimation(!props.overlayAnimation)
     }
 
     return (
@@ -37,13 +37,7 @@ const ProjectBox = props => {
             >
                 <div
                     onClick={overlayClick}
-                    className={overlay}
-                    style={{
-                        animation: `${overlayAnimation ? 'expandFull' : 'bringBack'} 1s`,
-                        background: overlayAnimation ? 'lime' : 'rgba(71, 70, 70, 0.842)',
-                        transform: overlayAnimation ? 'scale(1.9)' : 'scale(1)'
-                    }}
-                    
+                    className={overlay}   
                 >
                     {showTitle}
                 </div>

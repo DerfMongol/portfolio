@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 
 import ProjectBox from '../components/ProjectBox'
 import ImageContainer from '../components/ImageContainer'
+import ProjectModal from '../components/ProjectModal'
+
 import { PROJECTS, SKILLS } from '../data/data.js'
 
 const Home = () => {
@@ -10,6 +12,7 @@ const Home = () => {
     const [clicked, setClicked] = useState(['', '', '', '', '', ''])
     const [filterList, setFilterList] = useState([])
     const [show, setShow] = useState()
+    const [overlayAnimation, setOverlayAnimation] = useState(false)
     const [filterKey, setFilterKey] = useState([
         false,
         false,
@@ -51,13 +54,6 @@ const Home = () => {
         setShow(copyShow)
     }
 
-    // useEffect(() => {})
-
-    function imageReset() {
-        const reset = ['', '', '', '', '', '']
-        setClicked(reset)
-    }
-
     function imageHover(skill, article) {
         setSkill(skill)
         setArticle(article)
@@ -65,6 +61,7 @@ const Home = () => {
 
     return (
         <div className='container'>
+        <ProjectModal show={overlayAnimation} setShow={setOverlayAnimation}/>
             <div className='sentence'>Hello, My name is Lee Martin.</div>
             <div className='hover-skills'>
                 <div className='sentence'>I am</div>
@@ -95,6 +92,8 @@ const Home = () => {
                         key={index}
                         title={project.title}
                         pic={project.pic}
+                        overlayAnimation={overlayAnimation}
+                        setOverlayAnimation={setOverlayAnimation}
                     />
                 ))}
             </div>
