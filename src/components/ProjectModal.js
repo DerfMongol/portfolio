@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import ProjectBox from './ProjectBox'
+
+import { PROJECTS } from '../data/data'
 
 const ProjectModal = props => {
     const [render, setRender] = useState(props.show)
+    const [pic, setPic] = useState()
+    const [title, setTitle] = useState()
 
     useEffect(() => {
         if (props.show) setRender(true)
@@ -40,7 +43,14 @@ const ProjectModal = props => {
                     }}
                     onAnimationEnd={onAnimationEnd}
                 >
-                    Hello
+                    {PROJECTS.filter(
+                        project => project.id === props.projectId
+                    ).map((project1, index) => (
+                        <div key={index}>
+                            <div>{project1.title}</div>
+                            <div className='project' style={{ backgroundImage: `url(${project1.pic})` }} />
+                        </div>
+                    ))}
                 </div>
             </div>
         )

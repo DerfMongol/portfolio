@@ -13,6 +13,7 @@ const Home = () => {
     const [filterList, setFilterList] = useState([])
     const [show, setShow] = useState()
     const [overlayAnimation, setOverlayAnimation] = useState(false)
+    const [projectId, setProjectId] = useState()
     const [filterKey, setFilterKey] = useState([
         false,
         false,
@@ -40,7 +41,11 @@ const Home = () => {
         }
 
         PROJECTS.forEach((project, index1) => {
-            copyFilter.push({ title: project.title, pic: project.pic })
+            copyFilter.push({
+                id: project.id,
+                title: project.title,
+                pic: project.pic
+            })
             project.list.some((data, index) => {
                 if (!data && copy[index]) {
                     return true
@@ -61,7 +66,11 @@ const Home = () => {
 
     return (
         <div className='container'>
-        <ProjectModal show={overlayAnimation} setShow={setOverlayAnimation}/>
+            <ProjectModal
+                show={overlayAnimation}
+                setShow={setOverlayAnimation}
+                projectId={projectId}
+            />
             <div className='sentence'>Hello, My name is Lee Martin.</div>
             <div className='hover-skills'>
                 <div className='sentence'>I am</div>
@@ -88,8 +97,10 @@ const Home = () => {
             <div className='projects'>
                 {filterList.map((project, index) => (
                     <ProjectBox
-                        show={show[index]}
                         key={index}
+                        id={project.id}
+                        setProjectId={setProjectId}
+                        show={show[index]}
                         title={project.title}
                         pic={project.pic}
                         overlayAnimation={overlayAnimation}

@@ -5,7 +5,6 @@ const ProjectBox = props => {
     const [showTitle, setShowTitle] = useState('')
     const [overlay, setOverlay] = useState('')
     
-
     useEffect(() => {
         if (props.show) setRender(true)
     }, [props.show])
@@ -21,6 +20,7 @@ const ProjectBox = props => {
 
     function overlayClick() {
         props.setOverlayAnimation(!props.overlayAnimation)
+        props.setProjectId(props.id)
     }
 
     return (
