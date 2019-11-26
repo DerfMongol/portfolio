@@ -13,11 +13,32 @@
   }
 
   .modal {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     z-index: 4;
-    background: rgb(255, 255, 255);
+    background-color: rgb(214, 214, 214);
     border-radius: 5px;
-    width: 500px;
-    height: 300px;
+    width: 1000px;
+    height: 600px;
     margin: 0 auto;
     padding: 30px;
   }
+
+  .titleModal {
+      font-size: 40px;
+      font-weight: bold;
+      text-align: center;
+      margin: 20px 20px 100px 20px;
+  }
+
+  .projectModal {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 10px;
+    width: 500px;
+    height: 300px;
+    border-radius: 30px;
+    color: white;
+}

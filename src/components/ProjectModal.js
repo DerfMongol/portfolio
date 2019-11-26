@@ -47,8 +47,8 @@ const ProjectModal = props => {
                         project => project.id === props.projectId
                     ).map((project1, index) => (
                         <div key={index}>
-                            <div>{project1.title}</div>
-                            <div className='project' style={{ backgroundImage: `url(${project1.pic})` }} />
+                            <div className='titleModal'>{project1.title}</div>
+                            <div className='projectModal' style={{ backgroundImage: `url(${project1.pic})` }} />
                         </div>
                     ))}
                 </div>
