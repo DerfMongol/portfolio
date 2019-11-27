@@ -26,3 +26,27 @@
     width: 350px;
     color: rgb(255, 102, 0);
 }
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px)
+and (-webkit-device-pixel-ratio : 3) { 
+    .sentence {
+        font-size: 36px;
+        flex-wrap: nowrap;
+    }
+    .hover-skills div {
+        font-size: 24px;
+        flex: 0 0 40%;
+        
+        
+    }
+    .hover-skills {
+        margin-top: 20px;
+        
+    }
+    .container {
+        margin: 100px 20px;
+    }
+   
+}

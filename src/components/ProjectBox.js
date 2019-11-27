@@ -32,6 +32,7 @@ const ProjectBox = props => {
                     backgroundImage: `url(${props.pic})`
                 }}
                 onAnimationEnd={onAnimationEnd}
+                onClick={overlayClick}
                 onMouseEnter={() => projectHover(props.title, 'overlay')}
                 onMouseLeave={() => projectHover('', '')}
             >

@@ -4,8 +4,6 @@ import { PROJECTS } from '../data/data'
 
 const ProjectModal = props => {
     const [render, setRender] = useState(props.show)
-    const [pic, setPic] = useState()
-    const [title, setTitle] = useState()
 
     useEffect(() => {
         if (props.show) setRender(true)

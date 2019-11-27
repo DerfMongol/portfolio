@@ -23,7 +23,7 @@ const Home = () => {
         false
     ])
 
-    function imageClick(data) {
+    function imageClick(data, skill, article) {
         const copy = [...filterKey]
         const copyClick = [...clicked]
         const copyFilter = []
@@ -57,6 +57,8 @@ const Home = () => {
         })
         setFilterList(copyFilter)
         setShow(copyShow)
+        setSkill(skill)
+        setArticle(article)
     }
 
     function imageHover(skill, article) {
