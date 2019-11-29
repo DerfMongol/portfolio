@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
 import { PROJECTS } from '../data/data'
+import ProjectInfo from './ProjectInfo'
+import ProjectBox from './ProjectBox'
 
 const ProjectModal = props => {
     const [render, setRender] = useState(props.show)
@@ -44,10 +46,14 @@ const ProjectModal = props => {
                     {PROJECTS.filter(
                         project => project.id === props.projectId
                     ).map((project1, index) => (
-                        <div key={index}>
-                            <div className='titleModal'>{project1.title}</div>
-                            <div className='projectModal' style={{ backgroundImage: `url(${project1.pic})` }} />
-                        </div>
+                        <ProjectInfo
+                            key={index}
+                            index={index}
+                            title={project1.title}
+                            link={project1.link}
+                            github={project1.github}
+                            pic={project1.pic}
+                        />
                     ))}
                 </div>
             </div>

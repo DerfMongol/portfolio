@@ -15,18 +15,53 @@ import reactNat from '../images/reactNat.png'
 import express from '../images/main-qimg-f406db5658b5d0dade4d70a989560439.png'
 
 export const PROJECTS = [
-  new Project(0, 'GoatRelic', [true, true, true, true, true, true], goatRelic),
-  new Project(1, 'MealsApp', [true, false, true, true, true, false], mealsApp),
-  new Project(2, 'TheShopApp', [true, false, true, true, true, true], underConstruction),
-  new Project(3, 'TodoApi', [false, false, true, false, false, true], todoApp),
-  new Project(4, 'UniversalReactServer', [true, true, true, true, false, true], reactSsr)
-];
+    new Project(
+        0,
+        'GoatRelic',
+        [true, true, true, true, true, true],
+        'https://www.goatrelic.com',
+        'https://www.github.com/DerfMongol/goatrelic-react',
+        goatRelic
+    ),
+    new Project(
+        1,
+        'MealsApp',
+        [true, false, true, true, true, false],
+        null,
+        'https://www.github.com/DerfMongol/meals-app-react-native',
+        mealsApp
+    ),
+    new Project(
+        2,
+        'TheShopApp',
+        [true, false, true, true, true, true],
+        null,
+        'https://www.github.com/DerfMongol/shop-app-react-native',
+        underConstruction
+    ),
+    new Project(
+        3,
+        'TodoApi',
+        [false, false, true, false, false, true],
+        null,
+        'https://www.github.com/DerfMongol/node-todo-api',
+        todoApp
+    ),
+    new Project(
+        4,
+        'UniversalReactServer',
+        [true, true, true, true, false, true],
+        null,
+        'https://www.github.com/DerfMongol/universal-react-server',
+        reactSsr
+    )
+]
 
 export const SKILLS = [
-  new Skill(0, html, 'HTML', 'a', 'image'),
-  new Skill(1, css, 'CSS', 'a', 'image'),
-  new Skill(2, js, 'JavaScript', 'a', 'image'),
-  new Skill(3, react, 'React', 'a', 'image'),
-  new Skill(4, reactNat, 'React Native', 'a', 'image'),
-  new Skill(5, express, 'Express', 'an', 'express')
-];
+    new Skill(0, html, 'HTML', 'a', 'image'),
+    new Skill(1, css, 'CSS', 'a', 'image'),
+    new Skill(2, js, 'JavaScript', 'a', 'image'),
+    new Skill(3, react, 'React', 'a', 'image'),
+    new Skill(4, reactNat, 'React Native', 'a', 'image'),
+    new Skill(5, express, 'Express', 'an', 'express')
+]
