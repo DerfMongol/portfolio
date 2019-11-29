@@ -13,34 +13,44 @@
   }
 
   .modal {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    
     z-index: 4;
     background-color: rgb(214, 214, 214);
     border-radius: 5px;
-    width: 1000px;
-    height: 600px;
+    
     margin: 0 auto;
     padding: 30px;
+  }
+
+  .projectInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 1000px;
+    height: 600px;
   }
 
   .titleModal {
       font-size: 40px;
       font-weight: bold;
       text-align: center;
-      margin: 20px 20px 100px 20px;
+      padding: 10px;
   }
 
   .projectModal {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    margin: 10px;
+    margin: 50px 0;
     width: 500px;
     height: 300px;
     border-radius: 30px;
     color: white;
+}
+
+.titleContainer {
+    text-align: center;
 }
 
 @media only screen 

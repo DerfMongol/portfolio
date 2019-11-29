@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 import { PROJECTS } from '../data/data'
 import ProjectInfo from './ProjectInfo'
-import ProjectBox from './ProjectBox'
 
 const ProjectModal = props => {
     const [render, setRender] = useState(props.show)
@@ -53,6 +52,7 @@ const ProjectModal = props => {
                             link={project1.link}
                             github={project1.github}
                             pic={project1.pic}
+                            info={project1.info}
                         />
                     ))}
                 </div>
