@@ -29,7 +29,7 @@ const ProjectBox = props => {
                 className='project'
                 style={{
                     animation: `${props.show ? 'fadeIn' : 'fadeOut'} 1s`,
-                    backgroundImage: `url(${props.pic})`
+                    backgroundImage: `url(${props.pic[0]})`
                 }}
                 onAnimationEnd={onAnimationEnd}
                 onClick={overlayClick}

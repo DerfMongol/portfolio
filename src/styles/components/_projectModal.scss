@@ -38,11 +38,22 @@
       padding: 10px;
   }
 
+  .toggleProjectPics {
+      display: flex;
+      align-items: center;
+  }
+
+  .projectPicBtn {
+    font-size: 45px;
+    cursor: pointer;
+
+  }
+
   .projectModal {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    margin: 50px 0;
+    margin: 50px 50px;
     width: 500px;
     height: 300px;
     border-radius: 30px;
