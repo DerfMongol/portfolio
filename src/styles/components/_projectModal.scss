@@ -49,19 +49,52 @@
 
   }
 
+  .previewContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
   .projectModal {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    margin: 50px 50px;
     width: 500px;
     height: 300px;
-    border-radius: 30px;
+    color: white;
+}
+
+.projectPreview {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 200px;
+    height: 100px;
     color: white;
 }
 
 .titleContainer {
     text-align: center;
+}
+
+@keyframes moveRight {
+    from {
+        transform: translate(0px)
+    }
+
+    to {
+        transform: translate(50px)
+    }
+}
+
+@keyframes moveLeft {
+    from {
+        transform: translate(0px);
+    }
+
+    to {
+        transform: translate(-50px);
+    }
 }
 
 @media only screen 

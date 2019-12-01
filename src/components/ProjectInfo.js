@@ -1,16 +1,36 @@
 import React, { useState } from 'react'
 
+import ProjectPreview from './ProjectPreview'
+
 const ProjectInfo = props => {
     const [picIndex, setPicIndex] = useState(0)
+    const [prevIndex, setPrevIndex] = useState(props.pic.length - 1)
+    const [nextIndex, setNextIndex] = useState(1)
+    const [toggleMove, setToggleMove] = useState()
+
+    function indexWithinRange(index) {
+        if (index < 0) {
+            index = props.pic.length - 1
+        } else if (index >= props.pic.length) {
+            index = 0
+        }
+        return index
+    }
 
     function togglePic(index) {
-        let copyIndex = picIndex + index
-        if (copyIndex < 0) {
-            copyIndex = props.pic.length - 1
-        } else if (copyIndex === props.pic.length) {
-            copyIndex = 0
+        if (index === -1) {
+            setToggleMove('moveRight')
+        } else if (index === 1) {
+            setToggleMove('moveLeft')
         }
+
+        let copyIndex = indexWithinRange(picIndex + index)
+        let copyPrev = indexWithinRange(copyIndex - 1)
+        let copyNext = indexWithinRange(copyIndex + 1)
+
         setPicIndex(copyIndex)
+        setPrevIndex(copyPrev)
+        setNextIndex(copyNext)
     }
 
     return (
@@ -29,20 +49,34 @@ const ProjectInfo = props => {
             <div className='toggleProjectPics'>
                 {props.pic.length > 1 ? (
                     <div
-                        onClick={() => togglePic(-1)}
+                        onClick={() => togglePic(1)}
                         className='projectPicBtn'
                     >{`<`}</div>
                 ) : null}
+                <div className='previewContainer'>
+                    <ProjectPreview
+                        url={props.pic[prevIndex]}
+                        className='projectPreview'
+                        toggleMove={toggleMove}
+                        setToggleMove={setToggleMove}
+                    />
+                    <ProjectPreview
+                        url={props.pic[picIndex]}
+                        className='projectModal'
+                        toggleMove={toggleMove}
+                        setToggleMove={setToggleMove}
+                    />
+                    <ProjectPreview
+                        url={props.pic[nextIndex]}
+                        className='projectPreview'
+                        toggleMove={toggleMove}
+                        setToggleMove={setToggleMove}
+                    />
+                </div>
 
-                <div
-                    className='projectModal'
-                    style={{
-                        backgroundImage: `url(${props.pic[picIndex]})`
-                    }}
-                />
                 {props.pic.length > 1 ? (
                     <div
-                        onClick={() => togglePic(1)}
+                        onClick={() => togglePic(-1)}
                         className='projectPicBtn'
                     >{`>`}</div>
                 ) : null}
