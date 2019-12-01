@@ -2,10 +2,6 @@ import React, { useState } from 'react'
 
 const ProjectPreview = props => {
 
-    function onAnimationEnd() {
-        props.setToggleMove('')
-    }
-
     return (
         <div
             className={props.className}
@@ -13,7 +9,7 @@ const ProjectPreview = props => {
                 backgroundImage: `url(${props.url})`,
                 animation: `${props.toggleMove} 0.5s`
             }}
-            onAnimationEnd={onAnimationEnd}
+            onAnimationEnd={props.onAnimationEnd}
            
         />
     )

@@ -24,6 +24,19 @@ const ProjectInfo = props => {
             setToggleMove('moveLeft')
         }
 
+        
+    }
+
+    function onAnimationEnd() {
+        let index
+        if (toggleMove === 'moveRight') {
+            index = -1
+        } else if (toggleMove === 'moveLeft') {
+            index = 1
+        }
+        else {
+            index = 0
+        }
         let copyIndex = indexWithinRange(picIndex + index)
         let copyPrev = indexWithinRange(copyIndex - 1)
         let copyNext = indexWithinRange(copyIndex + 1)
@@ -31,6 +44,7 @@ const ProjectInfo = props => {
         setPicIndex(copyIndex)
         setPrevIndex(copyPrev)
         setNextIndex(copyNext)
+        setToggleMove('')
     }
 
     return (
@@ -59,18 +73,22 @@ const ProjectInfo = props => {
                         className='projectPreview'
                         toggleMove={toggleMove}
                         setToggleMove={setToggleMove}
+                        onAnimationEnd={onAnimationEnd}
+                        
                     />
                     <ProjectPreview
                         url={props.pic[picIndex]}
                         className='projectModal'
                         toggleMove={toggleMove}
                         setToggleMove={setToggleMove}
+                        onAnimationEnd={onAnimationEnd}
                     />
                     <ProjectPreview
                         url={props.pic[nextIndex]}
                         className='projectPreview'
                         toggleMove={toggleMove}
                         setToggleMove={setToggleMove}
+                        onAnimationEnd={onAnimationEnd}
                     />
                 </div>
 
