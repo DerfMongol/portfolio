@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 const ProjectPreview = props => {
-
     return (
         <div
             className={props.className}
@@ -10,7 +9,6 @@ const ProjectPreview = props => {
                 animation: `${props.toggleMove} 0.5s`
             }}
             onAnimationEnd={props.onAnimationEnd}
-           
         />
     )
 }
