@@ -121,7 +121,7 @@ const ProjectInfo = props => {
                 ) : null}
             </div>
 
-            <div>{props.info}</div>
+            <div className='projectSummary'>{props.info}</div>
         </div>
     )
 }
