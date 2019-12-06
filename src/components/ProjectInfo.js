@@ -41,11 +41,9 @@ const ProjectInfo = props => {
         if (toggleMove === 'moveRight') {
             index = -1
             setAppear('right')
-            
         } else if (toggleMove === 'moveLeft') {
             index = 1
             setAppear('left')
-            
         } else {
             index = 0
         }
@@ -75,67 +73,70 @@ const ProjectInfo = props => {
                     Github: <a href={props.github}>{props.github}</a>
                 </div>
             </div>
-            <div className='toggleProjectPics'>
+            <div
+                className={
+                    props.pic.length > 1
+                        ? 'toggleProjectPics'
+                        : 'previewContainer'
+                }
+            >
                 {props.pic.length > 1 ? (
                     <div
                         onClick={() => togglePic(1)}
                         className='projectPicBtn'
                     >{`<`}</div>
                 ) : null}
-                <div className='previewContainer'>
-                    {showLeft ? (
-                        <ProjectPreview
-                            url={props.pic[indexWithinRange(prevIndex - 1)]}
-                            className='projectPreviewShow left'
-                            toggleMove={startAnimation ? 'appear' : null}
-                        />
-                    ) : null}
-                    <ProjectPreview
-                        url={props.pic[prevIndex]}
-                        className='projectPreview left'
-                        toggleMove={
-                            startAnimation
-                                ? toggleMove === 'moveRight'
-                                    ? 'moveRightGrow'
-                                    : 'disappear'
-                                : null
-                                
-                        }
-                        onAnimationEnd={onAnimationEnd}
-                    />
-                    <ProjectPreview
-                        url={props.pic[picIndex]}
-                        className='projectModal'
-                        toggleMove={
-                            startAnimation
-                                ? toggleMove === 'moveRight'
-                                    ? 'moveRightShrink'
-                                    : 'moveLeftShrink'
-                                : null
-                        }
-                        onAnimationEnd={onAnimationEnd}
-                    />
-                    <ProjectPreview
-                        url={props.pic[nextIndex]}
-                        className='projectPreview right'
-                        toggleMove={
-                            startAnimation
-                                ? toggleMove === 'moveRight'
-                                    ? 'disappear'
-                                    : 'moveLeftGrow'
-                                : null
-                        }
-                        onAnimationEnd={onAnimationEnd}
-                    />
-                    {showRight ? (
-                        <ProjectPreview
-                            url={props.pic[indexWithinRange(nextIndex + 1)]}
-                            className='projectPreviewShow right'
-                            toggleMove={startAnimation ? 'appear' : null}
 
-                        />
-                    ) : null}
-                </div>
+                {showLeft ? (
+                    <ProjectPreview
+                        url={props.pic[indexWithinRange(prevIndex - 1)]}
+                        className='projectPreviewShow left'
+                        toggleMove={startAnimation ? 'appear' : null}
+                    />
+                ) : null}
+                <ProjectPreview
+                    url={props.pic[prevIndex]}
+                    className='projectPreview left'
+                    toggleMove={
+                        startAnimation
+                            ? toggleMove === 'moveRight'
+                                ? 'moveRightGrow'
+                                : 'disappear'
+                            : null
+                    }
+                    onAnimationEnd={onAnimationEnd}
+                />
+                <ProjectPreview
+                    url={props.pic[picIndex]}
+                    className='projectModal'
+                    toggleMove={
+                        startAnimation
+                            ? toggleMove === 'moveRight'
+                                ? 'moveRightShrink'
+                                : 'moveLeftShrink'
+                            : null
+                    }
+                    onAnimationEnd={onAnimationEnd}
+                />
+                <ProjectPreview
+                    url={props.pic[nextIndex]}
+                    className='projectPreview right'
+                    toggleMove={
+                        startAnimation
+                            ? toggleMove === 'moveRight'
+                                ? 'disappear'
+                                : 'moveLeftGrow'
+                            : null
+                    }
+                    onAnimationEnd={onAnimationEnd}
+                />
+                {showRight ? (
+                    <ProjectPreview
+                        url={props.pic[indexWithinRange(nextIndex + 1)]}
+                        className='projectPreviewShow right'
+                        toggleMove={startAnimation ? 'appear' : null}
+                    />
+                ) : null}
 
                 {props.pic.length > 1 ? (
                     <div

@@ -1,8 +1,9 @@
 @import './base/header';
 @import './base/base';
 @import './base/animations';
+@import './base/colors.scss';
 
 @import './components/home';
 @import './components/projects';
 @import './components/imageContainer';
-@import './components//projectModal'
+@import './components//projectModal';
