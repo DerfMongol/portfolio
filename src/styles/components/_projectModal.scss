@@ -43,6 +43,8 @@
 
   .toggleProjectPics {
       display: flex;
+      width: 100%;
+      justify-content: space-between;
       align-items: center;
   }
 
@@ -64,6 +66,7 @@
   }
 
   .projectModal {
+    z-index: 6;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -72,7 +75,8 @@
     color: white;
 }
 
-.projectPreview {
+.projectPreview, 
+.projectPreviewShow {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -80,6 +84,30 @@
     height: 100px;
     color: white;
 }
+
+.projectPreview {
+    z-index: 5;
+    
+}
+
+.projectPreviewShow {
+    z-index: 4;
+}
+
+.right,
+.left {
+    position: absolute;
+}
+
+.right {
+    right: 386px;
+}
+
+.left {
+    left: 386px;
+}
+
+
 
 .titleContainer {
     text-align: center;

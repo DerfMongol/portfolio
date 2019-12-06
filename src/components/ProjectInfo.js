@@ -4,11 +4,15 @@ import ProjectPreview from './ProjectPreview'
 
 const ProjectInfo = props => {
     const [picIndex, setPicIndex] = useState(0)
-    const [prevIndex, setPrevIndex] = useState(props.pic.length > 1 ? props.pic.length - 1 : null)
+    const [prevIndex, setPrevIndex] = useState(
+        props.pic.length > 1 ? props.pic.length - 1 : null
+    )
     const [nextIndex, setNextIndex] = useState(1)
     const [toggleMove, setToggleMove] = useState()
     const [startAnimation, setStartAnimation] = useState(false)
     const [appear, setAppear] = useState()
+    const [showLeft, setShowLeft] = useState(false)
+    const [showRight, setShowRight] = useState(false)
 
     function indexWithinRange(index) {
         if (index < 0) {
@@ -22,8 +26,12 @@ const ProjectInfo = props => {
     function togglePic(index) {
         if (index === -1) {
             setToggleMove('moveRight')
+            setShowLeft(true)
+            setShowRight(false)
         } else if (index === 1) {
             setToggleMove('moveLeft')
+            setShowRight(true)
+            setShowLeft(false)
         }
         setStartAnimation(true)
     }
@@ -33,9 +41,11 @@ const ProjectInfo = props => {
         if (toggleMove === 'moveRight') {
             index = -1
             setAppear('right')
+            
         } else if (toggleMove === 'moveLeft') {
             index = 1
             setAppear('left')
+            
         } else {
             index = 0
         }
@@ -43,6 +53,8 @@ const ProjectInfo = props => {
         let copyPrev = indexWithinRange(copyIndex - 1)
         let copyNext = indexWithinRange(copyIndex + 1)
 
+        setShowLeft(false)
+        setShowRight(false)
         setPicIndex(copyIndex)
         setPrevIndex(copyPrev)
         setNextIndex(copyNext)
@@ -71,17 +83,23 @@ const ProjectInfo = props => {
                     >{`<`}</div>
                 ) : null}
                 <div className='previewContainer'>
+                    {showLeft ? (
+                        <ProjectPreview
+                            url={props.pic[indexWithinRange(prevIndex - 1)]}
+                            className='projectPreviewShow left'
+                            toggleMove={startAnimation ? 'appear' : null}
+                        />
+                    ) : null}
                     <ProjectPreview
                         url={props.pic[prevIndex]}
-                        className='projectPreview'
+                        className='projectPreview left'
                         toggleMove={
                             startAnimation
                                 ? toggleMove === 'moveRight'
                                     ? 'moveRightGrow'
                                     : 'disappear'
-                                : appear === 'right'
-                                    ? 'appear'
-                                    : null
+                                : null
+                                
                         }
                         onAnimationEnd={onAnimationEnd}
                     />
@@ -99,18 +117,24 @@ const ProjectInfo = props => {
                     />
                     <ProjectPreview
                         url={props.pic[nextIndex]}
-                        className='projectPreview'
+                        className='projectPreview right'
                         toggleMove={
                             startAnimation
                                 ? toggleMove === 'moveRight'
                                     ? 'disappear'
                                     : 'moveLeftGrow'
-                                : appear === 'left'
-                                    ? 'appear'
-                                    : null
+                                : null
                         }
                         onAnimationEnd={onAnimationEnd}
                     />
+                    {showRight ? (
+                        <ProjectPreview
+                            url={props.pic[indexWithinRange(nextIndex + 1)]}
+                            className='projectPreviewShow right'
+                            toggleMove={startAnimation ? 'appear' : null}
+
+                        />
+                    ) : null}
                 </div>
 
                 {props.pic.length > 1 ? (

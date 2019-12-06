@@ -42,6 +42,9 @@ const ProjectModal = props => {
                     }}
                     onAnimationEnd={onAnimationEnd}
                 >
+                    <div className='closeOut' onClick={clickHandler}>
+                        X
+                    </div>
                     {PROJECTS.filter(
                         project => project.id === props.projectId
                     ).map((project1, index) => (
