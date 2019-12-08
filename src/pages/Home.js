@@ -14,6 +14,7 @@ const Home = () => {
     const [show, setShow] = useState()
     const [overlayAnimation, setOverlayAnimation] = useState(false)
     const [projectId, setProjectId] = useState()
+    const [projectShow, setProjectShow] = useState(false)
     const [filterKey, setFilterKey] = useState([
         false,
         false,
@@ -59,6 +60,7 @@ const Home = () => {
         setShow(copyShow)
         setSkill(skill)
         setArticle(article)
+        setProjectShow(true)
     }
 
     function imageHover(skill, article) {
@@ -96,20 +98,22 @@ const Home = () => {
                     />
                 ))}
             </div>
-            <div className='projects'>
-                {filterList.map((project, index) => (
-                    <ProjectBox
-                        key={index}
-                        id={project.id}
-                        setProjectId={setProjectId}
-                        show={show[index]}
-                        title={project.title}
-                        pic={project.pic}
-                        overlayAnimation={overlayAnimation}
-                        setOverlayAnimation={setOverlayAnimation}
-                    />
-                ))}
-            </div>
+            {projectShow ? (
+                <div className='projects'>
+                    {filterList.map((project, index) => (
+                        <ProjectBox
+                            key={index}
+                            id={project.id}
+                            setProjectId={setProjectId}
+                            show={show[index]}
+                            title={project.title}
+                            pic={project.pic}
+                            overlayAnimation={overlayAnimation}
+                            setOverlayAnimation={setOverlayAnimation}
+                        />
+                    ))}
+                </div>
+            ) : null}
         </div>
     )
 }
