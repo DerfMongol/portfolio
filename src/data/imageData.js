@@ -1,4 +1,4 @@
-import html from '../../public/images/
+import html from '../../public/images/'
 import css from '../../public/images/css3.png'
 import js from '../../public/images/js-small.gif'
 import react from '../../public/images/react.png'
