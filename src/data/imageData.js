@@ -1,4 +1,5 @@
 import html from '../images/HTML5_Logo_256.png' 
+import css from '../images/css3.png'
 import js from '../images/js-small.gif'
 import react from '../images/react.png'
 import reactNat from '../images/reactNat.png'
