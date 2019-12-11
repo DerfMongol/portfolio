@@ -27,26 +27,20 @@
     color: $dark-orange;
 }
 
-@media only screen 
-and (min-device-width : 375px) 
-and (max-device-width : 812px)
-and (-webkit-device-pixel-ratio : 3) { 
+
+@media (max-width: 480px) {
     .sentence {
         font-size: 36px;
         flex-wrap: nowrap;
     }
     .hover-skills div {
         font-size: 24px;
-        flex: 0 0 40%;
-        
-        
+        flex: 0 0 40%;   
     }
     .hover-skills {
-        margin-top: 20px;
-        
+        margin-top: 20px;    
     }
     .container {
         margin: 100px 20px;
     }
-   
 }
