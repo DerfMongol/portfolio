@@ -36,26 +36,6 @@
     background: $light-orange;
 }
 
-.image:hover,
-.express:hover,
-.image:active,
-.express:active {
-    transform: scale(1.1);
-    box-shadow: 5px 5px grey;
-    cursor: pointer;
-    animation-duration: 0.5s;
-    animation-name: grow;
-}
-
-.image:hover img,
-.express:hover img,
-.image:active img,
-.express:active img {
-    transform: scale(1.1);
-    animation-duration: 0.5s;
-    animation-name: grow;
-}
-
 @keyframes grow {
     from {
         transform: scale(1);
@@ -66,6 +46,23 @@
     }
 }
 
+@media (hover: hover) and (pointer: fine) {
+    .image:hover,
+    .express:hover {
+        transform: scale(1.1);
+        box-shadow: 5px 5px grey;
+        cursor: pointer;
+        animation-duration: 0.5s;
+        animation-name: grow;
+    }
+
+    .image:hover img,
+    .express:hover img {
+        transform: scale(1.1);
+        animation-duration: 0.5s;
+        animation-name: grow;
+    }
+}
 
 @media (max-width: 480px) {
     .clicked {
@@ -77,8 +74,7 @@
     }
     .image img,
     .express img {
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
     }
 }
-

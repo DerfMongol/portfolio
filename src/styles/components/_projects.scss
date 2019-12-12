@@ -20,29 +20,7 @@
     color: white;
 }
 
-.overlay {
-    display: flex;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    overflow: auto;
-    top: 0px;
-    left: 0px;
-    background: $orange-tint;
-    border: 2px solid $orange;
-    border-radius: 30px;
-    align-items: center;
-    animation-name: slowEnter;
-    animation-duration: 0.5s;
-    justify-content: center;
-    cursor: pointer;
-}
 
-.project:hover,
-.project:active {
-    transform: scale(1);
-}
 
 @keyframes fadeIn {
     0% {
@@ -78,10 +56,32 @@
     }
 }
 
-@media (max-width: 480px) {
-    .projects {
-        margin-top: 50px;
-    }    
+@media (hover: hover) and (pointer: fine) {
+    .project:hover {
+        transform: scale(1);
+    }
+    .overlay {
+        display: flex;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        overflow: auto;
+        top: 0px;
+        left: 0px;
+        background: $orange-tint;
+        border: 2px solid $orange;
+        border-radius: 30px;
+        align-items: center;
+        animation-name: slowEnter;
+        animation-duration: 0.5s;
+        justify-content: center;
+        cursor: pointer;
+    }
 }
 
-
+@media (max-width: 480px) {
+    .projects {
+        margin: 50px 0;
+    }
+}

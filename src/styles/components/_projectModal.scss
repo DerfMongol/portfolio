@@ -10,19 +10,19 @@
     right: 0;
     background: rgba(0, 0, 0, 0.514);
     padding: 50;
-  }
+}
 
-  .modal {
+.modal {
     z-index: 4;
     background-color: rgb(214, 214, 214);
     border-radius: 5px;
     margin: 0 auto;
-    padding: 0 30px 30px 30px; 
-  }
+    padding: 0 30px 30px 30px;
+}
 
-  .projectInfo {
+.projectInfo {
     display: flex;
-    
+
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -31,55 +31,48 @@
     font-size: 20px;
     text-align: center;
     vertical-align: middle;
-  }
+}
 
-  .closeOut {
-      font-size: 20px;
-      text-align: right;
-      top: 0;
-      right: 0;
-      padding-top: 20px;
-  }
+.closeOut {
+    font-size: 20px;
+    text-align: right;
+    top: 0;
+    right: 0;
+    padding-top: 20px;
+}
 
-  .closeOut:hover {
-    color: $orange;
-    cursor: pointer;
-  }
+.titleModal {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
 
-  .titleModal {
-      font-size: 40px;
-      font-weight: bold;
-      text-align: center;
-      padding: 10px;
-  }
+.toggleProjectPics {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
 
-  .toggleProjectPics {
-      display: flex;
-      position: relative;
-      width: 100%;
-      justify-content: space-between;
-      align-items: center;
-  }
-
-  .projectPicBtn {
+.projectPicBtn {
     font-size: 60px;
     font-weight: 900;
     cursor: pointer;
     margin: 0 20px;
-  }
+}
 
-  .projectPicBtn:hover {
-    color: $orange;
-  }
 
-  .previewContainer {
-      display: flex;
-      position: relative;
-      align-items: center;
-      justify-content: center;
-  }
 
-  .projectModal {
+.previewContainer {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.projectModal {
     z-index: 6;
     background-repeat: no-repeat;
     background-size: contain;
@@ -89,7 +82,7 @@
     color: white;
 }
 
-.projectPreview, 
+.projectPreview,
 .projectPreviewShow {
     background-repeat: no-repeat;
     background-size: contain;
@@ -101,7 +94,6 @@
 
 .projectPreview {
     z-index: 5;
-    
 }
 
 .projectPreviewShow {
@@ -121,8 +113,6 @@
     left: 100px;
 }
 
-
-
 .titleContainer {
     text-align: center;
 }
@@ -132,86 +122,122 @@
 }
 
 
-@keyframes moveRightGrow {
-    from {
-        transform: translate(0px) scale(1)
-    }
 
-    to {
-        transform: translate(400px) scale(3)
+@media (hover: hover) and (pointer: fine) {
+    .projectPicBtn:hover {
+        color: $orange;
+    }
+    .closeOut:hover {
+        color: $orange;
+        cursor: pointer;
+    }
+    @keyframes moveRightGrow {
+        from {
+            transform: translate(0px) scale(1);
+        }
+    
+        to {
+            transform: translate(400px) scale(3);
+        }
+    }
+    
+    @keyframes moveLeftGrow {
+        from {
+            transform: translate(0px) scale(1);
+        }
+    
+        to {
+            transform: translate(-400px) scale(3);
+        }
+    }
+    
+    @keyframes moveRightShrink {
+        from {
+            transform: translate(0px) scale(1);
+        }
+    
+        to {
+            transform: translate(400px) scale(0.33);
+        }
+    }
+    
+    @keyframes moveLeftShrink {
+        from {
+            transform: translate(0px) scale(1);
+        }
+    
+        to {
+            transform: translate(-400px) scale(0.33);
+        }
+    }
+    
+    @keyframes disappear {
+        from {
+            z-index: 4;
+            opacity: 100%;
+            transform: scale(1);
+        }
+    
+        to {
+            z-index: 3;
+            opacity: 0%;
+            transform: scale(0);
+        }
+    }
+    
+    @keyframes appear {
+        from {
+            opacity: 0%;
+            transform: scale(0);
+        }
+    
+        to {
+            opacity: 100%;
+            transform: scale(1);
+        }
     }
 }
-
-@keyframes moveLeftGrow {
-    from {
-        transform: translate(0px) scale(1);
-    }
-
-    to {
-        transform: translate(-400px) scale(3);
-    }
-}
-
-@keyframes moveRightShrink {
-    from {
-        transform: translate(0px) scale(1)
-    }
-
-    to {
-        transform: translate(400px) scale(0.33)
-    }
-}
-
-@keyframes moveLeftShrink {
-    from {
-        transform: translate(0px) scale(1);
-    }
-
-    to {
-        transform: translate(-400px) scale(0.33);
-    }
-}
-
-@keyframes disappear {
-    from {
-        z-index: 4;
-        opacity: 100%;
-        transform: scale(1);
-    }
-
-    to {
-        z-index: 3;
-        opacity: 0%;
-        transform: scale(0);
-    }
-}
-
-@keyframes appear {
-    from {
-        opacity: 0%;
-        transform: scale(0);
-    }
-
-    to {
-        opacity: 100%;
-        transform: scale(1);
-    }
-}
-
 
 @media (max-width: 480px) {
-    .modal {
-        width: 100%;
-        height: 50%;
-      }
-      .projectModal {
-        width: 350px;
-        height: 300px;
-    }
     .titleModal {
         font-size: 25px;
-       
-        margin: 20px 20px 20px 20px;
+        margin: 5px 5px 5px 5px;
     }
-}
+    .projectInfo {
+        width: 100%;
+        height: 400px;
+        font-size: 12px;
+    }
+    .projectPreview {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .left, 
+    .right,
+    .projectPreview, 
+    .projectPreviewShow {
+        display: none;
+    }
+    .projectModal {
+        width: 50%;
+        height: 100%; 
+    }
+    .closeOut {
+        padding: 5px
+    }
+    .modal {
+        padding: 0;
+    }
+    .projectSummary {
+        width: 100%;
+        padding: 10px;
+    }
+    .toggleProjectPics,
+    .previewContainer {
+        height: 50%;
+        width: 100%;
+    }
 
+   
+}
