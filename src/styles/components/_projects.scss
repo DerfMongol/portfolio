@@ -21,42 +21,40 @@
 }
 
 
-
-@keyframes fadeIn {
-    0% {
-        font-size: 0px;
-        opacity: 0;
-        width: 0;
-        margin: 0;
-        padding: 0;
-    }
-    100% {
-        font-size: 16px;
-        opacity: 1;
-        width: 150px;
-        margin: 10px;
-        padding: 100px;
-    }
-}
-
-@keyframes fadeOut {
-    0% {
-        font-size: 16px;
-        opacity: 1;
-        width: 150px;
-        margin: 10px;
-        padding: 100px;
-    }
-    100% {
-        font-size: 0px;
-        opacity: 0;
-        width: 0;
-        margin: 0;
-        padding: 0;
-    }
-}
-
 @media (hover: hover) and (pointer: fine) {
+    @keyframes fadeIn {
+        0% {
+            font-size: 0px;
+            opacity: 0;
+            width: 0;
+            margin: 0;
+            padding: 0;
+        }
+        100% {
+            font-size: 16px;
+            opacity: 1;
+            width: 150px;
+            margin: 10px;
+            padding: 100px;
+        }
+    }
+    
+    @keyframes fadeOut {
+        0% {
+            font-size: 16px;
+            opacity: 1;
+            width: 150px;
+            margin: 10px;
+            padding: 100px;
+        }
+        100% {
+            font-size: 0px;
+            opacity: 0;
+            width: 0;
+            margin: 0;
+            padding: 0;
+        }
+    }
     .project:hover {
         transform: scale(1);
     }
@@ -81,7 +79,48 @@
 }
 
 @media (max-width: 480px) {
-    .projects {
-        margin: 50px 0;
+    @keyframes fadeIn {
+        0% {
+            font-size: 0px;
+            opacity: 0;
+            width: 0;
+            margin: 0;
+            padding: 0;
+        }
+        100% {
+            font-size: 16px;
+            opacity: 1;
+            width: 30%;
+            margin: 10px;
+            padding: 100px;
+        }
     }
+    
+    @keyframes fadeOut {
+        0% {
+            font-size: 16px;
+            opacity: 1;
+            width: 30%;
+            margin: 10px;
+            padding: 100px;
+        }
+        100% {
+            font-size: 0px;
+            opacity: 0;
+            width: 0;
+            margin: 0;
+            padding: 0;
+        }
+    }
+    .projects {
+        width: 60%;
+        margin: 50px 0;
+        padding: 0px 0px;
+        height: 50%;
+    }
+    .project {
+        width: 30%;
+        padding: 100px;
+    }
+    
 }

@@ -82,38 +82,39 @@ const Home = () => {
                 <div className='skill'>{skill}</div>
                 <div className='sentence'>Developer.</div>
             </div>
-
-            <div className='skills'>
-                {SKILLS.map(skill => (
-                    <ImageContainer
-                        key={skill.id}
-                        clicked={clicked}
-                        file={skill.file}
-                        imageClick={imageClick}
-                        imageHover={imageHover}
-                        name={skill.name}
-                        nouns={skill.noun}
-                        index={skill.id}
-                        firstClass={skill.cssClass}
-                    />
-                ))}
-            </div>
-            {projectShow ? (
-                <div className='projects'>
-                    {filterList.map((project, index) => (
-                        <ProjectBox
-                            key={index}
-                            id={project.id}
-                            setProjectId={setProjectId}
-                            show={show[index]}
-                            title={project.title}
-                            pic={project.pic}
-                            overlayAnimation={overlayAnimation}
-                            setOverlayAnimation={setOverlayAnimation}
+            <div className="skillContainer">
+                <div className='skills'>
+                    {SKILLS.map(skill => (
+                        <ImageContainer
+                            key={skill.id}
+                            clicked={clicked}
+                            file={skill.file}
+                            imageClick={imageClick}
+                            imageHover={imageHover}
+                            name={skill.name}
+                            nouns={skill.noun}
+                            index={skill.id}
+                            firstClass={skill.cssClass}
                         />
                     ))}
                 </div>
-            ) : null}
+                {projectShow ? (
+                    <div className='projects'>
+                        {filterList.map((project, index) => (
+                            <ProjectBox
+                                key={index}
+                                id={project.id}
+                                setProjectId={setProjectId}
+                                show={show[index]}
+                                title={project.title}
+                                pic={project.pic}
+                                overlayAnimation={overlayAnimation}
+                                setOverlayAnimation={setOverlayAnimation}
+                            />
+                        ))}
+                    </div>
+                ) : null}
+            </div>
         </div>
     )
 }
