@@ -83,7 +83,7 @@ const ProjectInfo = props => {
                 {props.pic.length > 1 ? (
                     <div
                         onClick={() => togglePic(1)}
-                        className='projectPicBtn'
+                        className={`projectPicBtn ${toggleMove==='moveLeft' ? 'arrowClicked' : ''}`}
                     >{`<`}</div>
                 ) : null}
 
@@ -141,7 +141,7 @@ const ProjectInfo = props => {
                 {props.pic.length > 1 ? (
                     <div
                         onClick={() => togglePic(-1)}
-                        className='projectPicBtn'
+                        className={`projectPicBtn ${toggleMove==='moveRight' ? 'arrowClicked' : ''}`}
                     >{`>`}</div>
                 ) : null}
             </div>
