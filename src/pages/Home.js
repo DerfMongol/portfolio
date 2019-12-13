@@ -75,7 +75,8 @@ const Home = () => {
                 setShow={setOverlayAnimation}
                 projectId={projectId}
             />
-            <div className='sentence'>Hello, My name is Lee Martin.</div>
+            <div className='sentence'>Hello, My name is</div>
+            <div className='skill'>Lee Martin</div>
             <div className='hover-skills'>
                 <div className='sentence'>I am</div>
                 <div className='article'>{article}</div>
