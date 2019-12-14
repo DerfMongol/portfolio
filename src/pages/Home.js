@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import ProjectBox from '../components/ProjectBox'
 import ImageContainer from '../components/ImageContainer'
@@ -54,6 +54,7 @@ const Home = () => {
                 if (index === 5) {
                     copyShow[index1] = true
                 }
+                return false
             })
         })
         setFilterList(copyFilter)

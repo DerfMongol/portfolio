@@ -10,7 +10,6 @@ const ProjectInfo = props => {
     const [nextIndex, setNextIndex] = useState(1)
     const [toggleMove, setToggleMove] = useState()
     const [startAnimation, setStartAnimation] = useState(false)
-    const [appear, setAppear] = useState()
     const [showLeft, setShowLeft] = useState(false)
     const [showRight, setShowRight] = useState(false)
 
@@ -40,10 +39,8 @@ const ProjectInfo = props => {
         let index
         if (toggleMove === 'moveRight') {
             index = -1
-            setAppear('right')
         } else if (toggleMove === 'moveLeft') {
             index = 1
-            setAppear('left')
         } else {
             index = 0
         }
