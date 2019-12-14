@@ -73,6 +73,25 @@ const ProjectInfo = props => {
                     Github: <a href={props.github}>{props.github}</a>
                 </div>
             </div>
+            <div className='arrowsContainer'>
+                {props.pic.length > 1 ? (
+                    <div
+                        onClick={() => togglePic(1)}
+                        className={`projectPicBtn ${
+                            toggleMove === 'moveLeft' ? 'arrowClicked' : ''
+                        }`}
+                    >{`<`}</div>
+                ) : null}
+                {props.pic.length > 1 ? (
+                    <div
+                        onClick={() => togglePic(-1)}
+                        className={`projectPicBtn ${
+                            toggleMove === 'moveRight' ? 'arrowClicked' : ''
+                        }`}
+                    >{`>`}</div>
+                ) : null}
+            </div>
+
             <div
                 className={
                     props.pic.length > 1
@@ -80,13 +99,6 @@ const ProjectInfo = props => {
                         : 'previewContainer'
                 }
             >
-                {props.pic.length > 1 ? (
-                    <div
-                        onClick={() => togglePic(1)}
-                        className={`projectPicBtn ${toggleMove==='moveLeft' ? 'arrowClicked' : ''}`}
-                    >{`<`}</div>
-                ) : null}
-
                 {showLeft ? (
                     <ProjectPreview
                         url={props.pic[indexWithinRange(prevIndex - 1)]}
@@ -136,13 +148,6 @@ const ProjectInfo = props => {
                         className='projectPreviewShow right'
                         toggleMove={startAnimation ? 'appear' : null}
                     />
-                ) : null}
-
-                {props.pic.length > 1 ? (
-                    <div
-                        onClick={() => togglePic(-1)}
-                        className={`projectPicBtn ${toggleMove==='moveRight' ? 'arrowClicked' : ''}`}
-                    >{`>`}</div>
                 ) : null}
             </div>
 

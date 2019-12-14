@@ -16,21 +16,33 @@
     z-index: 4;
     background-color: rgb(214, 214, 214);
     border-radius: 5px;
+    max-width: 1200px;
+    height: auto;
     margin: 0 auto;
-    padding: 0 30px 30px 30px;
+    
 }
 
 .projectInfo {
     display: flex;
-
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 1200px;
-    height: 600px;
+    width: 100%;
+    height: 900px;
     font-size: 20px;
     text-align: center;
     vertical-align: middle;
+    
+
+}
+
+
+
+.titleModal {
+    padding: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .closeOut {
@@ -38,13 +50,6 @@
     text-align: right;
     top: 0;
     right: 0;
-    padding-top: 20px;
-}
-
-.titleModal {
-    font-size: 40px;
-    font-weight: bold;
-    text-align: center;
     padding: 10px;
 }
 
@@ -52,15 +57,26 @@
     display: flex;
     position: relative;
     width: 100%;
-    justify-content: space-between;
+    height: 100%;
+    justify-content: center;
     align-items: center;
+    
+}
+
+.arrowsContainer {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    margin-top: 5%;
 }
 
 .projectPicBtn {
     font-size: 60px;
     font-weight: 900;
-    cursor: pointer;
-    margin: 0 20px;
+    
+    margin: 0 10%;
+    user-select: none;
+
 }
 
 .previewContainer {
@@ -75,8 +91,8 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    width: 600px;
-    height: 300px;
+    width: 90%;
+    height: 100%;
     color: white;
 }
 
@@ -85,8 +101,8 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    width: 200px;
-    height: 100px;
+    width: 20%;
+    height: 22%;
     color: white;
 }
 
@@ -104,11 +120,11 @@
 }
 
 .right {
-    right: 100px;
+    right: 1%;
 }
 
 .left {
-    left: 100px;
+    left: 1%;
 }
 
 .titleContainer {
@@ -116,46 +132,55 @@
 }
 
 .projectSummary {
-    width: 700px;
+    width: 100%;
+    margin: 5% 0;
 }
 
 @keyframes moveRightGrow {
     from {
-        transform: translate(0px) scale(1);
+        transform: translate(0%) scale(1);
+        z-index: 5;
     }
 
     to {
-        transform: translate(400px) scale(3);
+        transform: translate(195%) scale(4.53);
+        z-index: 6;
     }
 }
 
 @keyframes moveLeftGrow {
     from {
-        transform: translate(0px) scale(1);
+        transform: translate(0%) scale(1);
+        z-index: 5;
     }
 
     to {
-        transform: translate(-400px) scale(3);
+        transform: translate(-195%) scale(4.53);
+        z-index: 6;
     }
 }
 
 @keyframes moveRightShrink {
     from {
-        transform: translate(0px) scale(1);
+        transform: translate(0%) scale(1);
+        z-index: 6;
     }
 
     to {
-        transform: translate(400px) scale(0.33);
+        transform: translate(43.3%) scale(0.22);
+        z-index: 5;
     }
 }
 
 @keyframes moveLeftShrink {
     from {
-        transform: translate(0px) scale(1);
+        transform: translate(0%) scale(1);
+        z-index: 6;
     }
 
     to {
-        transform: translate(-400px) scale(0.33);
+        transform: translate(-43.3%) scale(0.22);
+        z-index: 5;
     }
 }
 
@@ -188,6 +213,7 @@
 @media (hover: hover) and (pointer: fine) {
     .projectPicBtn:hover {
         color: $orange;
+        cursor: pointer;
     }
     .closeOut:hover {
         color: $orange;
@@ -198,22 +224,20 @@
 @media (max-width: 480px) {
     .titleModal {
         font-size: 25px;
-        margin: 5px 5px 5px 5px;
+        margin: 5px;
     }
     .projectInfo {
-        width: 100%;
-        height: 400px;
+        height: 500px;
         font-size: 12px;
     }
 
-    .left,
-    .right,
-    .projectPreview,
-    .projectPreviewShow {
-        display: none;
-    }
+    // .left,
+    // .right,
+    // .projectPreview,
+    // .projectPreviewShow {
+    //     display: none;
+    // }
     .projectModal {
-        width: 50%;
         height: 100%;
     }
     .closeOut {
