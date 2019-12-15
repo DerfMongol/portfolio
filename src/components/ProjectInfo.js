@@ -75,7 +75,7 @@ const ProjectInfo = props => {
                     <div
                         onClick={() => togglePic(1)}
                         className={`projectPicBtn ${
-                            toggleMove === 'moveLeft' ? 'arrowClicked' : ''
+                            showRight ? 'arrowClicked' : ''
                         }`}
                     >{`<`}</div>
                 ) : null}
@@ -83,7 +83,7 @@ const ProjectInfo = props => {
                     <div
                         onClick={() => togglePic(-1)}
                         className={`projectPicBtn ${
-                            toggleMove === 'moveRight' ? 'arrowClicked' : ''
+                            showLeft ? 'arrowClicked' : ''
                         }`}
                     >{`>`}</div>
                 ) : null}
