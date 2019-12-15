@@ -35,8 +35,10 @@ const ProjectInfo = props => {
     function onAnimationEnd() {
         let index
         if (showLeft) {
+            setShowLeft(false)
             index = -1
         } else if (showRight) {
+            setShowRight(false)
             index = 1
         } else {
             index = 0
@@ -45,8 +47,6 @@ const ProjectInfo = props => {
         let copyPrev = indexWithinRange(copyIndex - 1)
         let copyNext = indexWithinRange(copyIndex + 1)
 
-        setShowLeft(false)
-        setShowRight(false)
         setPicIndex(copyIndex)
         setPrevIndex(copyPrev)
         setNextIndex(copyNext)
