@@ -70,7 +70,7 @@
     }
 
     to {
-        transform: translate(195%) scale(4.53) perspective(1px) translateZ(0);
+        transform: translate(195%) scale(4.53);
         backface-visibility: hidden;
         z-index: 6;
     }
@@ -146,6 +146,82 @@
         color: $orange;
         cursor: pointer;
     }
+    @keyframes moveRightGrow {
+        from {
+            transform: translate(0%) scale(1);
+            z-index: 5;
+        }
+    
+        to {
+            transform: translate(195%) scale(4.53);
+            backface-visibility: hidden;
+            z-index: 6;
+        }
+    }
+    
+    @keyframes moveLeftGrow {
+        from {
+            transform: translate(0%) scale(1);
+            z-index: 5;
+        }
+    
+        to {
+            transform: translate(-195%) scale(4.53);
+            z-index: 6;
+        }
+    }
+    
+    @keyframes moveRightShrink {
+        from {
+            transform: translate(0%) scale(1);
+            z-index: 6;
+        }
+    
+        to {
+            transform: translate(43.3%) scale(0.22);
+            z-index: 5;
+        }
+    }
+    
+    @keyframes moveLeftShrink {
+        from {
+            transform: translate(0%) scale(1);
+            z-index: 6;
+        }
+    
+        to {
+            transform: translate(-43.3%) scale(0.22);
+            z-index: 5;
+        }
+    }
+    
+    @keyframes disappear {
+        from {
+            z-index: 5;
+            opacity: 100%;
+            transform: scale(1);
+        }
+    
+        to {
+            z-index: 4;
+            opacity: 0%;
+            transform: scale(0);
+        }
+    }
+    
+    @keyframes appear {
+        from {
+            z-index: 4;
+            opacity: 0%;
+            transform: scale(0);
+        }
+    
+        to {
+            z-index: 5;
+            opacity: 100%;
+            transform: scale(1);
+        }
+    }
 }
 
 @media (max-width: 480px) {
@@ -160,4 +236,72 @@
         color: $light-orange;
         cursor: pointer;
     }
+    .projectPreview,
+    .right,
+    .left {
+        opacity: 0;
+    }
+    .projectPreviewShow {
+        display: none;
+    }
+    @keyframes moveRightGrow {
+        from {
+            transform: translate(0%) scale(1);
+            opacity: 0%;
+        }
+    
+        to {
+            transform: translate(195%) scale(4.53);
+            opacity: 100%;
+        }
+    }
+    
+    @keyframes moveLeftGrow {
+        from {
+            transform: translate(0%) scale(1);
+            opacity: 0%;
+        }
+    
+        to {
+            transform: translate(-195%) scale(4.53);
+            opacity: 100%;
+        }
+    }
+    
+    @keyframes moveRightShrink {
+        from {
+            transform: translate(0%) scale(1);
+            opacity: 100%;
+        }
+    
+        to {
+            transform: translate(43.3%) scale(0.22);
+            opacity: 0%;
+        }
+    }
+    
+    @keyframes moveLeftShrink {
+        from {
+            transform: translate(0%) scale(1);
+            opacity: 100%;
+        }
+    
+        to {
+            transform: translate(-43.3%) scale(0.22);
+            opacity: 0%;
+        }
+    }
+
+    @keyframes disappear {
+        from {
+            display: none;
+        }
+    
+        to {
+            display: none;
+        }
+    }
+
+
+    
 }
