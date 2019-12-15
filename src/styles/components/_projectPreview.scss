@@ -70,12 +70,12 @@
         cursor: pointer;
     }
     @keyframes moveRightGrow {
-        from {
+        0% {
             transform: translate(0%) scale(1);
             z-index: 5;
         }
     
-        to {
+        100% {
             transform: translate(195%) scale(4.53);
             backface-visibility: hidden;
             z-index: 6;
@@ -83,49 +83,49 @@
     }
     
     @keyframes moveLeftGrow {
-        from {
+        0% {
             transform: translate(0%) scale(1);
             z-index: 5;
         }
     
-        to {
+        100% {
             transform: translate(-195%) scale(4.53);
             z-index: 6;
         }
     }
     
     @keyframes moveRightShrink {
-        from {
+        0% {
             transform: translate(0%) scale(1);
             z-index: 6;
         }
     
-        to {
+        100% {
             transform: translate(43.3%) scale(0.22);
             z-index: 5;
         }
     }
     
     @keyframes moveLeftShrink {
-        from {
+        0% {
             transform: translate(0%) scale(1);
             z-index: 6;
         }
     
-        to {
+        100% {
             transform: translate(-43.3%) scale(0.22);
             z-index: 5;
         }
     }
     
     @keyframes disappear {
-        from {
+        0% {
             z-index: 5;
             opacity: 100%;
             transform: scale(1);
         }
     
-        to {
+        100% {
             z-index: 4;
             opacity: 0%;
             transform: scale(0);
@@ -133,13 +133,13 @@
     }
     
     @keyframes appear {
-        from {
+        0% {
             z-index: 4;
             opacity: 0%;
             transform: scale(0);
         }
     
-        to {
+        100% {
             z-index: 5;
             opacity: 100%;
             transform: scale(1);
@@ -168,59 +168,59 @@
         display: none;
     }
     @keyframes moveRightGrow {
-        from {
+        0% {
             transform: translate(0%) scale(1);
             opacity: 0%;
         }
     
-        to {
+        100% {
             transform: translate(195%) scale(4.53);
             opacity: 100%;
         }
     }
     
     @keyframes moveLeftGrow {
-        from {
+        0% {
             transform: translate(0%) scale(1);
             opacity: 0%;
         }
     
-        to {
+        100% {
             transform: translate(-195%) scale(4.53);
             opacity: 100%;
         }
     }
     
     @keyframes moveRightShrink {
-        from {
+        0% {
             transform: translate(0%) scale(1);
             opacity: 100%;
         }
     
-        to {
+        100% {
             transform: translate(43.3%) scale(0.22);
             opacity: 0%;
         }
     }
     
     @keyframes moveLeftShrink {
-        from {
+        0% {
             transform: translate(0%) scale(1);
             opacity: 100%;
         }
     
-        to {
+        100% {
             transform: translate(-43.3%) scale(0.22);
             opacity: 0%;
         }
     }
 
     @keyframes disappear {
-        from {
+        0% {
             display: none;
         }
     
-        to {
+        100% {
             display: none;
         }
     }
