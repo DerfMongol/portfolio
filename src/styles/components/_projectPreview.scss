@@ -141,7 +141,7 @@
     }
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (min-width: 481px) {
     .projectPicBtn:hover {
         color: $orange;
         cursor: pointer;
