@@ -8,7 +8,6 @@ const ProjectInfo = props => {
         props.pic.length > 1 ? props.pic.length - 1 : null
     )
     const [nextIndex, setNextIndex] = useState(1)
-    const [toggleMove, setToggleMove] = useState()
     const [startAnimation, setStartAnimation] = useState(false)
     const [showLeft, setShowLeft] = useState(false)
     const [showRight, setShowRight] = useState(false)
@@ -24,11 +23,9 @@ const ProjectInfo = props => {
 
     function togglePic(index) {
         if (index === -1) {
-            setToggleMove('moveRight')
             setShowLeft(true)
             setShowRight(false)
         } else if (index === 1) {
-            setToggleMove('moveLeft')
             setShowRight(true)
             setShowLeft(false)
         }
@@ -37,9 +34,9 @@ const ProjectInfo = props => {
 
     function onAnimationEnd() {
         let index
-        if (toggleMove === 'moveRight') {
+        if (showLeft) {
             index = -1
-        } else if (toggleMove === 'moveLeft') {
+        } else if (showRight) {
             index = 1
         } else {
             index = 0
@@ -53,7 +50,6 @@ const ProjectInfo = props => {
         setPicIndex(copyIndex)
         setPrevIndex(copyPrev)
         setNextIndex(copyNext)
-        setToggleMove('')
         setStartAnimation(false)
     }
 
@@ -108,7 +104,7 @@ const ProjectInfo = props => {
                     className='projectPreview left'
                     toggleMove={
                         startAnimation
-                            ? toggleMove === 'moveRight'
+                            ? showLeft
                                 ? 'moveRightGrow'
                                 : 'disappear'
                             : null
@@ -120,7 +116,7 @@ const ProjectInfo = props => {
                     className='projectModal'
                     toggleMove={
                         startAnimation
-                            ? toggleMove === 'moveRight'
+                            ? showLeft
                                 ? 'moveRightShrink'
                                 : 'moveLeftShrink'
                             : null
@@ -132,7 +128,7 @@ const ProjectInfo = props => {
                     className='projectPreview right'
                     toggleMove={
                         startAnimation
-                            ? toggleMove === 'moveRight'
+                            ? showLeft
                                 ? 'disappear'
                                 : 'moveLeftGrow'
                             : null
