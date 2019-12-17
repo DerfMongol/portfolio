@@ -5,6 +5,7 @@ import ProjectInfo from './ProjectInfo'
 
 const ProjectModal = props => {
     const [render, setRender] = useState(props.show)
+    const [closeClicked, setCloseClicked] = useState(false)
 
     useEffect(() => {
         if (props.show) setRender(true)
@@ -12,10 +13,12 @@ const ProjectModal = props => {
 
     function clickHandler() {
         props.setShow(!props.show)
+        setCloseClicked(!closeClicked)
     }
 
     function onAnimationEnd() {
         if (!props.show) setRender(false)
+        setCloseClicked(false)
     }
 
     function childClickHandler(e) {
@@ -42,7 +45,7 @@ const ProjectModal = props => {
                     }}
                     onAnimationEnd={onAnimationEnd}
                 >
-                    <div className='closeOut' onClick={clickHandler}>
+                    <div className={`closeOut ${closeClicked ? 'closeClicked' : ''}`} onClick={clickHandler}>
                         X
                     </div>
                     {PROJECTS.filter(

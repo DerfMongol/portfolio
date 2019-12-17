@@ -3,7 +3,7 @@
     display: flex;
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 400px;
     justify-content: center;
     align-items: center;
 }
@@ -11,15 +11,18 @@
 .arrowsContainer {
     display: flex;
     justify-content: center;
-    width: 30%;
+    width: 360px;
     margin-top: 5%;
 }
 
 .projectPicBtn {
     font-size: 60px;
     font-weight: 900;
-    margin: 0 10%;
-    user-select: none;
+    width: 20%;
+    height: 20%;
+    margin: 5%;
+    border-radius: 100%;
+    border: 1px solid black;
 }
 
 .projectModal {
@@ -30,6 +33,7 @@
     width: 90%;
     height: 100%;
     color: white;
+    transform: scale(1)
 }
 
 .projectPreview,
@@ -37,8 +41,8 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    width: 20%;
-    height: 22%;
+    width: 90%;
+    height: 100%;
     color: white;
 }
 
@@ -53,96 +57,102 @@
 .right,
 .left {
     position: absolute;
+    transform: scale(0.22);
 }
 
 .right {
-    right: 1%;
+    margin-left: 75%;
 }
 
 .left {
-    left: 1%;
+    margin-right: 75%;
 }
 
+.arrowClicked {
+    background: $light-orange;
+}
 
 @media (hover: hover) and (pointer: fine) {
     .projectPicBtn:hover {
-        color: $orange;
+        transform: scale(1.1);
+        box-shadow: 5px 5px grey;
         cursor: pointer;
+        animation-duration: 0.5s;
+        animation-name: grow;
     }
     @keyframes moveRightGrow {
         0% {
-            transform: translate(0%) scale(1);
+            transform: translate(0) scale(0.22);
             z-index: 5;
         }
-    
+
         100% {
-            transform: translate(195%) scale(4.53);
-            backface-visibility: hidden;
+            transform: translate(41.7%) scale(1);
             z-index: 6;
         }
     }
-    
+
     @keyframes moveLeftGrow {
         0% {
-            transform: translate(0%) scale(1);
+            transform: translate(0) scale(0.22);
             z-index: 5;
         }
-    
+
         100% {
-            transform: translate(-195%) scale(4.53);
+            transform: translate(-41.7%) scale(1);
             z-index: 6;
         }
     }
-    
+
     @keyframes moveRightShrink {
         0% {
             transform: translate(0%) scale(1);
             z-index: 6;
         }
-    
+
         100% {
-            transform: translate(43.3%) scale(0.22);
+            transform: translate(41.7%) scale(0.22);
             z-index: 5;
         }
     }
-    
+
     @keyframes moveLeftShrink {
         0% {
             transform: translate(0%) scale(1);
             z-index: 6;
         }
-    
+
         100% {
-            transform: translate(-43.3%) scale(0.22);
+            transform: translate(-41.7%) scale(0.22);
             z-index: 5;
         }
     }
-    
+
     @keyframes disappear {
         0% {
             z-index: 5;
             opacity: 1;
-            transform: scale(1);
+            transform: scale(0.22);
         }
-    
+
         100% {
             z-index: 4;
             opacity: 0;
             transform: scale(0);
         }
     }
-    
+
     @keyframes appear {
         0% {
             z-index: 4;
             opacity: 0;
             transform: scale(0);
         }
-    
+
         100% {
             z-index: 5;
             opacity: 1;
-            transform: scale(1);
+            transform: scale(0.22);
         }
     }
 }
@@ -156,8 +166,12 @@
         height: 250px;
     }
     .arrowClicked {
-        color: $light-orange;
+        transform: scale(1.1);
+        box-shadow: 5px 5px grey;
         cursor: pointer;
+        animation-duration: 0.5s;
+        animation-name: grow;
+        background: $light-orange;
     }
     .projectPreview,
     .right,
@@ -167,50 +181,52 @@
     .projectPreviewShow {
         display: none;
     }
+
+
     @keyframes moveRightGrow {
         0% {
-            transform: translate(0%) scale(1);
+            transform: translate(0) scale(0.22);
             opacity: 0;
         }
-    
+
         100% {
-            transform: translate(195%) scale(4.53);
+            transform: translate(41.7%) scale(1);
             opacity: 1;
         }
     }
-    
+
     @keyframes moveLeftGrow {
         0% {
-            transform: translate(0%) scale(1);
+            transform: translate(0) scale(0.22);
             opacity: 0;
         }
-    
+
         100% {
-            transform: translate(-195%) scale(4.53);
+            transform: translate(-41.7%) scale(1);
             opacity: 1;
         }
     }
-    
+
     @keyframes moveRightShrink {
         0% {
             transform: translate(0%) scale(1);
             opacity: 1;
         }
-    
+
         100% {
-            transform: translate(43.3%) scale(0.22);
+            transform: translate(41.7%) scale(0.22);
             opacity: 0;
         }
     }
-    
+
     @keyframes moveLeftShrink {
         0% {
             transform: translate(0%) scale(1);
             opacity: 1;
         }
-    
+
         100% {
-            transform: translate(-43.3%) scale(0.22);
+            transform: translate(-41.7%) scale(0.22);
             opacity: 0;
         }
     }
@@ -219,12 +235,9 @@
         0% {
             display: none;
         }
-    
+
         100% {
             display: none;
         }
     }
-
-
-    
 }
