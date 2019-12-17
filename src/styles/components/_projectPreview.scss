@@ -185,24 +185,24 @@
 
     @keyframes moveRightGrow {
         0% {
-            transform: translate(0%) scale(0.22);
+            transform: translate(-41.7%) scale(0.22);
             opacity: 0;
         }
 
         100% {
-            transform: translate(41.7%) scale(1);
+            transform: translate(0) scale(1);
             opacity: 1;
         }
     }
 
     @keyframes moveLeftGrow {
         0% {
-            transform: translate(0%) scale(0.22);
+            transform: translate(41.7%) scale(0.22);
             opacity: 0;
         }
 
         100% {
-            transform: translate(-41.7%) scale(1);
+            transform: translate(0) scale(1);
             opacity: 1;
         }
     }
