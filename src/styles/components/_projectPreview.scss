@@ -33,7 +33,7 @@
     width: 90%;
     height: 100%;
     color: white;
-    transform: translate(0) scale(1)
+    transform: translate(0%) scale(1)
 }
 
 .projectPreview,
@@ -185,7 +185,7 @@
 
     @keyframes moveRightGrow {
         0% {
-            transform: translate(0) scale(0.22);
+            transform: translate(0%) scale(0.22);
             opacity: 0;
         }
 
@@ -197,7 +197,7 @@
 
     @keyframes moveLeftGrow {
         0% {
-            transform: translate(0) scale(0.22);
+            transform: translate(0%) scale(0.22);
             opacity: 0;
         }
 
