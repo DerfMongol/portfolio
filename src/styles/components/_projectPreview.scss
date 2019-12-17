@@ -33,7 +33,7 @@
     width: 90%;
     height: 100%;
     color: white;
-    transform: translate(0%) scale(1)
+    transform: translate(0%) scale(1);
 }
 
 .projectPreview,
@@ -182,6 +182,19 @@
         display: none;
     }
 
+    .right,
+    .left {
+       margin: 0;
+
+    }
+
+    .right {
+        transform: translate(41.7%);
+    }
+
+    .left {
+        transform: translate(-41.7%);
+    }
 
     @keyframes moveRightGrow {
         0% {
