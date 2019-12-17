@@ -13,6 +13,7 @@
     justify-content: center;
     width: 360px;
     margin-top: 5%;
+    
 }
 
 .projectPicBtn {
@@ -33,7 +34,7 @@
     width: 90%;
     height: 100%;
     color: white;
-    transform: translate(0%) scale(1);
+    transform: translate3d(0%,0,0) scale(1);
 }
 
 .projectPreview,
@@ -82,48 +83,48 @@
     }
     @keyframes moveRightGrow {
         0% {
-            transform: translate(0) scale(0.22);
+            transform: translate3d(0%,0,0) scale(0.22);
             z-index: 5;
         }
 
         100% {
-            transform: translate(41.7%) scale(1);
+            transform: translate3d(41.7%,0,0) scale(1);
             z-index: 6;
         }
     }
 
     @keyframes moveLeftGrow {
         0% {
-            transform: translate(0) scale(0.22);
+            transform: translate3d(0%,0,0) scale(0.22);
             z-index: 5;
         }
 
         100% {
-            transform: translate(-41.7%) scale(1);
+            transform: translate3d(-41.7%,0,0) scale(1);
             z-index: 6;
         }
     }
 
     @keyframes moveRightShrink {
         0% {
-            transform: translate(0%) scale(1);
+            transform: translate3d(0%,0,0) scale(1);
             z-index: 6;
         }
 
         100% {
-            transform: translate(41.7%) scale(0.22);
+            transform: translate3d(41.7%,0,0) scale(0.22);
             z-index: 5;
         }
     }
 
     @keyframes moveLeftShrink {
         0% {
-            transform: translate(0%) scale(1);
+            transform: translate3d(0%,0,0) scale(1);
             z-index: 6;
         }
 
         100% {
-            transform: translate(-41.7%) scale(0.22);
+            transform: translate3d(-41.7%,0,0) scale(0.22);
             z-index: 5;
         }
     }
@@ -189,57 +190,57 @@
     }
 
     .right {
-        transform: translate(41.7%);
+        transform: translate3d(41.7%,0,0);
     }
 
     .left {
-        transform: translate(-41.7%);
+        transform: translate3d(-41.7%,0,0);
     }
 
     @keyframes moveRightGrow {
         0% {
-            transform: translate(-41.7%) scale(0.22);
+            transform: translate3d(-41.7%,0,0) scale(0.22);
             opacity: 0;
         }
 
         100% {
-            transform: translate(0) scale(1);
+            transform: translate3d(0%,0,0) scale(1);
             opacity: 1;
         }
     }
 
     @keyframes moveLeftGrow {
         0% {
-            transform: translate(41.7%) scale(0.22);
+            transform: translate3d(41.7%,0,0) scale(0.22);
             opacity: 0;
         }
 
         100% {
-            transform: translate(0) scale(1);
+            transform: translate3d(0%,0,0) scale(1);
             opacity: 1;
         }
     }
 
     @keyframes moveRightShrink {
         0% {
-            transform: translate(0%) scale(1);
+            transform: translate3d(0%,0,0) scale(1);
             opacity: 1;
         }
 
         100% {
-            transform: translate(41.7%) scale(0.22);
+            transform: translate3d(41.7%,0,0) scale(0.22);
             opacity: 0;
         }
     }
 
     @keyframes moveLeftShrink {
         0% {
-            transform: translate(0%) scale(1);
+            transform: translate3d(0%,0,0) scale(1);
             opacity: 1;
         }
 
         100% {
-            transform: translate(-41.7%) scale(0.22);
+            transform: translate3d(-41.7%,0,0) scale(0.22);
             opacity: 0;
         }
     }
