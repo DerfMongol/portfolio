@@ -13,7 +13,6 @@
     justify-content: center;
     width: 360px;
     margin-top: 5%;
-    user-select: none;
 }
 
 .projectPicBtn {
@@ -25,12 +24,6 @@
     margin: 5%;
     border-radius: 100%;
     border: 1px solid black;
-}
-.projectPicBtn:hover {
-    transform: scale(1.1);
-    box-shadow: 5px 5px grey;
-    animation-duration: 0.5s;
-    animation-name: grow;
 }
 
 .projectModal {
@@ -81,7 +74,13 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-    
+    .projectPicBtn:hover {
+        transform: scale(1.1);
+        box-shadow: 5px 5px grey;
+        cursor: pointer;
+        animation-duration: 0.5s;
+        animation-name: grow;
+    }
     @keyframes moveRightGrow {
         0% {
             transform: translate(0) scale(0.22);
