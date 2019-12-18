@@ -81,12 +81,14 @@ const ProjectInfo = props => {
                     <div
                         className={`projectPicBtn ${rightClick}`}
                         onClick={() => togglePic(1)}
+                        onTouchEnd={e => e.preventDefault()}
                     >{`<`}</div>
                  : null}
                 {props.pic.length > 1 ? 
                     <div
                         className={`projectPicBtn ${leftClick}`}
                         onClick={() => togglePic(-1)}
+                        onTouchEnd={e => e.preventDefault()}
                     >{`>`}</div>
                  : null}
             </div>
