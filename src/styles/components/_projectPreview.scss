@@ -26,6 +26,12 @@
     border-radius: 100%;
     border: 1px solid black;
 }
+.projectPicBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px grey;
+    animation-duration: 0.5s;
+    animation-name: grow;
+}
 
 .projectModal {
     z-index: 6;
@@ -75,13 +81,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .projectPicBtn:hover {
-        transform: scale(1.1);
-        box-shadow: 5px 5px grey;
-        cursor: pointer;
-        animation-duration: 0.5s;
-        animation-name: grow;
-    }
+    
     @keyframes moveRightGrow {
         0% {
             transform: translate(0) scale(0.22);
