@@ -21,6 +21,7 @@
     font-weight: 900;
     width: 20%;
     height: 20%;
+    cursor: pointer;
     margin: 5%;
     border-radius: 100%;
     border: 1px solid black;
@@ -174,6 +175,7 @@
         animation-duration: 0.5s;
         animation-name: grow;
         background: $light-orange;
+        touch-action: manipulation;
     }
     .projectPreview,
     .projectPreviewShow,

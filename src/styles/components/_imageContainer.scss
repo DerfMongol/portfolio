@@ -13,6 +13,7 @@
     border-radius: 80px;
     border: 1px solid black;
     position: relative;
+    cursor: pointer;
 }
 
 .image img {
@@ -80,6 +81,8 @@
         cursor: pointer;
         animation-duration: 0.5s;
         animation-name: grow;
+        touch-action: manipulation;
+
     }
     .image img,
     .express img {
