@@ -11,7 +11,6 @@ const ProjectInfo = props => {
     const [startAnimation, setStartAnimation] = useState(false)
     const [showLeft, setShowLeft] = useState(false)
     const [showRight, setShowRight] = useState(false)
-    const [clicked, setClicked] = useState(['',''])
 
     function indexWithinRange(index) {
         if (index < 0) {
@@ -33,25 +32,17 @@ const ProjectInfo = props => {
     }
 
     function togglePic(index) {
-        let copyClick = [...clicked]
-
         if (index === -1) {
             setShowLeft(true)
             setShowRight(false)
-            copyClick[0] = 'arrowClicked'
-            copyClick[1] = ''
         } else if (index === 1) {
             setShowRight(true)
             setShowLeft(false)
-            copyClick[0] = ''
-            copyClick[1] = 'arrowClicked'
         }
         if (window.innerWidth <= 760) {
             setIndexes(index)
         }
-        setClicked(copyClick)
         setStartAnimation(true)
-        
     }
 
     function onAnimationEnd() {
@@ -68,6 +59,9 @@ const ProjectInfo = props => {
         setIndexes(index)
         setStartAnimation(false)
     }
+
+    const rightClick = showRight ? 'arrowClicked' : ''
+    const leftClick = showLeft ? 'arrowClicked' : ''
 
     return (
         <div key={props.index} className='projectInfo'>
@@ -86,13 +80,13 @@ const ProjectInfo = props => {
                 {props.pic.length > 1 ? (
                     <div
                         onClick={() => togglePic(1)}
-                        className={`projectPicBtn ${clicked[1]}`}
+                        className={`projectPicBtn ${rightClick}`}
                     >{`<`}</div>
                 ) : null}
                 {props.pic.length > 1 ? (
                     <div
                         onClick={() => togglePic(-1)}
-                        className={`projectPicBtn ${clicked[0]}`}
+                        className={`projectPicBtn ${leftClick}`}
                     >{`>`}</div>
                 ) : null}
             </div>
