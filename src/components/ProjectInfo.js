@@ -21,6 +21,16 @@ const ProjectInfo = props => {
         return index
     }
 
+    function setIndexes(index) {
+        let copyIndex = indexWithinRange(picIndex + index)
+        let copyPrev = indexWithinRange(copyIndex - 1)
+        let copyNext = indexWithinRange(copyIndex + 1)
+
+        setPicIndex(copyIndex)
+        setPrevIndex(copyPrev)
+        setNextIndex(copyNext)
+    }
+
     function togglePic(index) {
         if (index === -1) {
             setShowLeft(true)
@@ -30,6 +40,7 @@ const ProjectInfo = props => {
             setShowLeft(false)
         }
         setStartAnimation(true)
+        setIndexes(index)
     }
 
     function onAnimationEnd() {
@@ -43,13 +54,7 @@ const ProjectInfo = props => {
         } else {
             index = 0
         }
-        let copyIndex = indexWithinRange(picIndex + index)
-        let copyPrev = indexWithinRange(copyIndex - 1)
-        let copyNext = indexWithinRange(copyIndex + 1)
-
-        setPicIndex(copyIndex)
-        setPrevIndex(copyPrev)
-        setNextIndex(copyNext)
+        setIndexes(index)
         setStartAnimation(false)
     }
 

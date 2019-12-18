@@ -50,7 +50,7 @@
     width: 25px;
     padding: 5px;
     margin: 10px 5px 0 95%;
-    border-radius: 100%;
+    border-radius: 50%;
     border: 1px solid black;
 }
 
@@ -70,7 +70,7 @@
 @media (hover: hover) and (pointer: fine) {
     .closeOut:hover {
         transform: scale(1.1);
-        box-shadow: 5px 5px grey;
+        box-shadow: 2px 2px grey;
         cursor: pointer;
         animation-duration: 0.5s;
         animation-name: grow;

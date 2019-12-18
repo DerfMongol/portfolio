@@ -13,7 +13,7 @@
     justify-content: center;
     width: 360px;
     margin-top: 5%;
-    
+    user-select: none;
 }
 
 .projectPicBtn {
@@ -34,7 +34,7 @@
     width: 90%;
     height: 100%;
     color: white;
-    transform: translate3d(0%,0,0) scale(1);
+    transform: translate(0%) scale(1);
 }
 
 .projectPreview,
@@ -83,48 +83,48 @@
     }
     @keyframes moveRightGrow {
         0% {
-            transform: translate3d(0%,0,0) scale(0.22);
+            transform: translate(0) scale(0.22);
             z-index: 5;
         }
 
         100% {
-            transform: translate3d(41.7%,0,0) scale(1);
+            transform: translate(41.7%) scale(1);
             z-index: 6;
         }
     }
 
     @keyframes moveLeftGrow {
         0% {
-            transform: translate3d(0%,0,0) scale(0.22);
+            transform: translate(0) scale(0.22);
             z-index: 5;
         }
 
         100% {
-            transform: translate3d(-41.7%,0,0) scale(1);
+            transform: translate(-41.7%) scale(1);
             z-index: 6;
         }
     }
 
     @keyframes moveRightShrink {
         0% {
-            transform: translate3d(0%,0,0) scale(1);
+            transform: translate(0%) scale(1);
             z-index: 6;
         }
 
         100% {
-            transform: translate3d(41.7%,0,0) scale(0.22);
+            transform: translate(41.7%) scale(0.22);
             z-index: 5;
         }
     }
 
     @keyframes moveLeftShrink {
         0% {
-            transform: translate3d(0%,0,0) scale(1);
+            transform: translate(0%) scale(1);
             z-index: 6;
         }
 
         100% {
-            transform: translate3d(-41.7%,0,0) scale(0.22);
+            transform: translate(-41.7%) scale(0.22);
             z-index: 5;
         }
     }
@@ -161,6 +161,7 @@
 @media (max-width: 480px) {
     .projectModal {
         height: 100%;
+        animation: none !important;
     }
     .toggleProjectPics,
     .previewContainer {
@@ -175,11 +176,9 @@
         background: $light-orange;
     }
     .projectPreview,
+    .projectPreviewShow
     .right,
     .left {
-        opacity: 0;
-    }
-    .projectPreviewShow {
         display: none;
     }
 
@@ -189,69 +188,69 @@
 
     }
 
-    .right {
-        transform: translate3d(41.7%,0,0);
-    }
+    // .right {
+    //     transform: translate(41.7%);
+    // }
 
-    .left {
-        transform: translate3d(-41.7%,0,0);
-    }
+    // .left {
+    //     transform: translate(-41.7%);
+    // }
 
-    @keyframes moveRightGrow {
-        0% {
-            transform: translate3d(-41.7%,0,0) scale(0.22);
-            opacity: 0;
-        }
+    // @keyframes moveRightGrow {
+    //     0% {
+    //         transform: translate(-41.7%) scale(0.22);
+    //         opacity: 0;
+    //     }
 
-        100% {
-            transform: translate3d(0%,0,0) scale(1);
-            opacity: 1;
-        }
-    }
+    //     100% {
+    //         transform: translate(0) scale(1);
+    //         opacity: 1;
+    //     }
+    // }
 
-    @keyframes moveLeftGrow {
-        0% {
-            transform: translate3d(41.7%,0,0) scale(0.22);
-            opacity: 0;
-        }
+    // @keyframes moveLeftGrow {
+    //     0% {
+    //         transform: translate(41.7%) scale(0.22);
+    //         opacity: 0;
+    //     }
 
-        100% {
-            transform: translate3d(0%,0,0) scale(1);
-            opacity: 1;
-        }
-    }
+    //     100% {
+    //         transform: translate(0) scale(1);
+    //         opacity: 1;
+    //     }
+    // }
 
-    @keyframes moveRightShrink {
-        0% {
-            transform: translate3d(0%,0,0) scale(1);
-            opacity: 1;
-        }
+    // @keyframes moveRightShrink {
+    //     0% {
+    //         transform: translate(0%) scale(1);
+    //         opacity: 1;
+    //     }
 
-        100% {
-            transform: translate3d(41.7%,0,0) scale(0.22);
-            opacity: 0;
-        }
-    }
+    //     100% {
+    //         transform: translate(41.7%) scale(0.22);
+    //         opacity: 0;
+    //     }
+    // }
 
-    @keyframes moveLeftShrink {
-        0% {
-            transform: translate3d(0%,0,0) scale(1);
-            opacity: 1;
-        }
+    // @keyframes moveLeftShrink {
+    //     0% {
+    //         transform: translate(0%) scale(1);
+    //         opacity: 1;
+    //     }
 
-        100% {
-            transform: translate3d(-41.7%,0,0) scale(0.22);
-            opacity: 0;
-        }
-    }
+    //     100% {
+    //         transform: translate(-41.7%) scale(0.22);
+    //         opacity: 0;
+    //     }
+    // }
 
-    @keyframes disappear {
-        0% {
-            display: none;
-        }
+    // @keyframes disappear {
+    //     0% {
+    //         display: none;
+    //     }
 
-        100% {
-            display: none;
-        }
-    }
+    //     100% {
+    //         display: none;
+    //     }
+    // }
 }
