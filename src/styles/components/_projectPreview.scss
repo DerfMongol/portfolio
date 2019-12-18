@@ -176,16 +176,11 @@
         background: $light-orange;
     }
     .projectPreview,
-    .projectPreviewShow
+    .projectPreviewShow,
     .right,
     .left {
         display: none;
-    }
-
-    .right,
-    .left {
-       margin: 0;
-
+        animation: none !important;
     }
 
     // .right {
