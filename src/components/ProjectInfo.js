@@ -39,8 +39,11 @@ const ProjectInfo = props => {
             setShowRight(true)
             setShowLeft(false)
         }
+        if (window.innerWidth <= 760) {
+            setIndexes(index)
+        }
         setStartAnimation(true)
-        setIndexes(index)
+        
     }
 
     function onAnimationEnd() {

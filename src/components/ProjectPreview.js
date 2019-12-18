@@ -9,6 +9,7 @@ const ProjectPreview = props => {
                 animation: `${props.toggleMove} 0.5s`
             }}
             onAnimationEnd={props.onAnimationEnd}
+            
         ></div>
     )
 }
