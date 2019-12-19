@@ -31,12 +31,23 @@ const ProjectInfo = props => {
         setNextIndex(copyNext)
     }
 
-    function togglePic(index) {
-        
+    function clickPic(index) {
         if (window.innerWidth <= 760) {
             setIndexes(index)
         }
         setStartAnimation(true)
+    }
+
+    function toggleRight() {
+        setShowLeft(true)
+        setShowRight(false)
+        clickPic(-1)
+    }
+
+    function toggleLeft() {
+        setShowRight(true)
+        setShowLeft(false)
+        clickPic(1)
     }
 
     function onAnimationEnd() {
@@ -74,17 +85,13 @@ const ProjectInfo = props => {
                 {props.pic.length > 1 ? (
                     <div
                         className={`projectPicBtn ${rightClick}`}
-                        onClick={() => togglePic(1)}
-                        onMouseEnter={() => setShowRight(true)}
-                        onMouseLeave={() => setShowRight(false)}
+                        onClick={toggleLeft}
                     >{`<`}</div>
                 ) : null}
                 {props.pic.length > 1 ? (
                     <div
                         className={`projectPicBtn ${leftClick}`}
-                        onClick={() => togglePic(-1)}
-                        onMouseEnter={() => setShowLeft(true)}
-                        onMouseLeave={() => setShowLeft(false)}
+                        onClick={toggleRight}
                     >{`>`}</div>
                 ) : null}
             </div>
