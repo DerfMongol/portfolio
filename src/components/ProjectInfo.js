@@ -38,13 +38,15 @@ const ProjectInfo = props => {
         setStartAnimation(true)
     }
 
-    function toggleRight() {
+    function toggleRight(e) {
+        e.stopPropagation()
         setShowLeft(true)
         setShowRight(false)
         clickPic(-1)
     }
 
-    function toggleLeft() {
+    function toggleLeft(e) {
+        e.stopPropagation()
         setShowRight(true)
         setShowLeft(false)
         clickPic(1)
@@ -85,13 +87,13 @@ const ProjectInfo = props => {
                 {props.pic.length > 1 ? (
                     <div
                         className={`projectPicBtn ${rightClick}`}
-                        onClick={toggleLeft}
+                        onClick={e => toggleLeft(e)}
                     >{`<`}</div>
                 ) : null}
                 {props.pic.length > 1 ? (
                     <div
                         className={`projectPicBtn ${leftClick}`}
-                        onClick={toggleRight}
+                        onClick={e => toggleRight(e)}
                     >{`>`}</div>
                 ) : null}
             </div>
