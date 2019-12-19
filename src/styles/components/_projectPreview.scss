@@ -69,9 +69,6 @@
     margin-right: 75%;
 }
 
-.arrowClicked {
-    background: $light-orange;
-}
 
 @media (hover: hover) and (pointer: fine) {
     .projectPicBtn:hover {
@@ -167,15 +164,7 @@
     .previewContainer {
         height: 250px;
     }
-    .arrowClicked {
-        transform: scale(1.1);
-        box-shadow: 5px 5px grey;
-        cursor: pointer;
-        animation-duration: 0.5s;
-        animation-name: grow;
-        background: $light-orange;
-        touch-action: manipulation;
-    }
+    
     .projectPreview,
     .projectPreviewShow,
     .right,

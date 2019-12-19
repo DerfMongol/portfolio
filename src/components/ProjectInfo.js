@@ -60,8 +60,8 @@ const ProjectInfo = props => {
         setStartAnimation(false)
     }
 
-    let rightClick = showRight ? 'arrowClicked' : ''
-    let leftClick = showLeft ? 'arrowClicked' : ''
+    const rightClick = showRight ? 'clicked' : ''
+    const leftClick = showLeft ? 'clicked' : ''
 
     return (
         <div key={props.index} className='projectInfo'>
@@ -77,20 +77,18 @@ const ProjectInfo = props => {
                 </div>
             </div>
             <div className='arrowsContainer'>
-                {props.pic.length > 1 ? 
+                {props.pic.length > 1 ? (
                     <div
                         className={`projectPicBtn ${rightClick}`}
                         onClick={() => togglePic(1)}
-                        onTouchEnd={e => e.preventDefault()}
                     >{`<`}</div>
-                 : null}
-                {props.pic.length > 1 ? 
+                ) : null}
+                {props.pic.length > 1 ? (
                     <div
                         className={`projectPicBtn ${leftClick}`}
                         onClick={() => togglePic(-1)}
-                        onTouchEnd={e => e.preventDefault()}
                     >{`>`}</div>
-                 : null}
+                ) : null}
             </div>
 
             <div
