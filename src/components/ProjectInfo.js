@@ -85,13 +85,13 @@ const ProjectInfo = props => {
                 {props.pic.length > 1 ? (
                     <div
                         className={`projectPicBtn ${rightClick}`}
-                        onClick={() => toggleLeft()}
+                        onMouseUp={() => toggleLeft()}
                     >{`<`}</div>
                 ) : null}
                 {props.pic.length > 1 ? (
                     <div
                         className={`projectPicBtn ${leftClick}`}
-                        onClick={() => toggleRight()}
+                        onMouseUp={() => toggleRight()}
                     >{`>`}</div>
                 ) : null}
             </div>
