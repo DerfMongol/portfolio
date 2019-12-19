@@ -39,14 +39,14 @@ const ProjectInfo = props => {
     }
 
     function toggleRight(e) {
-        e.stopPropagation()
+        e.preventDefault()
         setShowLeft(true)
         setShowRight(false)
         clickPic(-1)
     }
 
     function toggleLeft(e) {
-        e.stopPropagation()
+        e.preventDefault()
         setShowRight(true)
         setShowLeft(false)
         clickPic(1)
