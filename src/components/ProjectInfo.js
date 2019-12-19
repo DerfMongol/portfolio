@@ -32,13 +32,7 @@ const ProjectInfo = props => {
     }
 
     function togglePic(index) {
-        if (index === -1) {
-            setShowLeft(true)
-            setShowRight(false)
-        } else if (index === 1) {
-            setShowRight(true)
-            setShowLeft(false)
-        }
+        
         if (window.innerWidth <= 760) {
             setIndexes(index)
         }
@@ -81,12 +75,16 @@ const ProjectInfo = props => {
                     <div
                         className={`projectPicBtn ${rightClick}`}
                         onClick={() => togglePic(1)}
+                        onMouseEnter={() => setShowRight(true)}
+                        onMouseLeave={() => setShowRight(false)}
                     >{`<`}</div>
                 ) : null}
                 {props.pic.length > 1 ? (
                     <div
                         className={`projectPicBtn ${leftClick}`}
                         onClick={() => togglePic(-1)}
+                        onMouseEnter={() => setShowLeft(true)}
+                        onMouseLeave={() => setShowLeft(false)}
                     >{`>`}</div>
                 ) : null}
             </div>
