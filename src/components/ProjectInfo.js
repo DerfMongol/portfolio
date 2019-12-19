@@ -83,16 +83,16 @@ const ProjectInfo = props => {
             </div>
             <div className='arrowsContainer'>
                 {props.pic.length > 1 ? (
-                    <div
+                    <button
                         className={`projectPicBtn ${rightClick}`}
-                        onMouseUp={() => toggleLeft()}
-                    >{`<`}</div>
+                        onClick={() => toggleLeft()}
+                    >{`<`}</button>
                 ) : null}
                 {props.pic.length > 1 ? (
-                    <div
+                    <button
                         className={`projectPicBtn ${leftClick}`}
-                        onMouseUp={() => toggleRight()}
-                    >{`>`}</div>
+                        onClick={() => toggleRight()}
+                    >{`>`}</button>
                 ) : null}
             </div>
 
