@@ -4,7 +4,7 @@ const ProjectBox = props => {
     const [render, setRender] = useState(props.show)
     const [showTitle, setShowTitle] = useState('')
     const [overlay, setOverlay] = useState('')
-    
+
     useEffect(() => {
         if (props.show) setRender(true)
     }, [props.show])
@@ -36,12 +36,12 @@ const ProjectBox = props => {
                 onMouseEnter={() => projectHover(props.title, 'overlay')}
                 onMouseLeave={() => projectHover('', '')}
             >
-                <div
-                    onClick={overlayClick}
-                    className={overlay}   
-                >
-                    {showTitle}
-                </div>
+                {window.innerWidth <= 760 ? null : (
+                    <div onClick={overlayClick} className={overlay}>
+                        {showTitle}
+                    </div>
+                )}
+                }
             </div>
         )
     )

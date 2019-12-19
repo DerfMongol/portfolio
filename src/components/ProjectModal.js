@@ -21,9 +21,6 @@ const ProjectModal = props => {
         setCloseClicked(false)
     }
 
-    function childClickHandler(e) {
-        e.stopPropagation()
-    }
 
     return (
         render && (
@@ -37,7 +34,6 @@ const ProjectModal = props => {
             >
                 <div
                     className='modal'
-                    onClick={childClickHandler}
                     style={{
                         animation: `${
                             props.show ? 'slowEnter' : 'slowLeave'

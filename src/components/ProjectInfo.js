@@ -38,16 +38,18 @@ const ProjectInfo = props => {
         setStartAnimation(true)
     }
 
-    function toggleRight() {
+    function toggleRight(e) {
         setShowLeft(true)
         setShowRight(false)
         clickPic(-1)
+        e.stopPropagation()
     }
 
-    function toggleLeft() {
+    function toggleLeft(e) {
         setShowRight(true)
         setShowLeft(false)
         clickPic(1)
+        e.stopPropagation()
     }
 
     function onAnimationEnd() {
@@ -83,16 +85,16 @@ const ProjectInfo = props => {
             </div>
             <div className='arrowsContainer'>
                 {props.pic.length > 1 ? (
-                    <button
+                    <div
                         className={`projectPicBtn ${rightClick}`}
-                        onClick={() => toggleLeft()}
-                    >{`<`}</button>
+                        onClick={(e) => toggleLeft(e)}
+                    >{`<`}</div>
                 ) : null}
                 {props.pic.length > 1 ? (
-                    <button
+                    <div
                         className={`projectPicBtn ${leftClick}`}
-                        onClick={() => toggleRight()}
-                    >{`>`}</button>
+                        onClick={(e) => toggleRight(e)}
+                    >{`>`}</div>
                 ) : null}
             </div>
 
