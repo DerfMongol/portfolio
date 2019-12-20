@@ -16,6 +16,7 @@
     z-index: 4;
     background-color: rgb(214, 214, 214);
     border-radius: 5px;
+    min-width: 800px;
     max-width: 1200px;
     height: auto;
     margin: 0 auto;
@@ -49,7 +50,7 @@
     height: 25px;
     width: 25px;
     padding: 5px;
-    margin: 10px 5px 0 95%;
+    margin: 10px 10px 0 95%;
     border-radius: 50%;
     border: 1px solid black;
 }
@@ -86,6 +87,7 @@
         font-size: 12px;
     }
     .modal {
+        min-width: 0;
         padding: 0;
     }
     .projectSummary {
