@@ -41,7 +41,6 @@ const ProjectBox = props => {
                         {showTitle}
                     </div>
                 )}
-                }
             </div>
         )
     )

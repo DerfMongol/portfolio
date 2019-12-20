@@ -24,7 +24,8 @@ const Home = () => {
         false
     ])
 
-    function imageClick(data, skill, article) {
+    function imageClick(data, skill, article, e) {
+        e.stopPropagation()
         const copy = [...filterKey]
         const copyClick = [...clicked]
         const copyFilter = []

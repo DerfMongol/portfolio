@@ -4,7 +4,7 @@ const ImageContainer = props => {
     return (
         <div
             className={`${props.firstClass} ${props.clicked[props.index]}`}
-            onClick={() => props.imageClick(props.index, props.name, props.nouns)}
+            onClick={(e) => props.imageClick(props.index, props.name, props.nouns, e)}
             onMouseEnter={() => props.imageHover(props.name, props.nouns)}
         >
             <img src={props.file} alt='logo' />
