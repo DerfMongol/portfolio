@@ -25,7 +25,6 @@ const Home = () => {
     ])
 
     function imageClick(data, skill, article, e) {
-        e.stopPropagation()
         const copy = [...filterKey]
         const copyClick = [...clicked]
         const copyFilter = []
@@ -98,6 +97,7 @@ const Home = () => {
                             nouns={skill.noun}
                             index={skill.id}
                             firstClass={skill.cssClass}
+                            isMobile={window.innerWidth <= 760 ? true : false}
                         />
                     ))}
                 </div>
