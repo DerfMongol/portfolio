@@ -10,11 +10,11 @@ const Home = () => {
     const [skill, setSkill] = useState('Full Stack Web')
     const [article, setArticle] = useState('a')
     const [clicked, setClicked] = useState(['', '', '', '', '', ''])
-    const [filterList, setFilterList] = useState([])
-    const [show, setShow] = useState()
+    const [filterList, setFilterList] = useState(() => renderProjects())
+    const [show, setShow] = useState([true, true, true, true, true, true])
     const [overlayAnimation, setOverlayAnimation] = useState(false)
     const [projectId, setProjectId] = useState()
-    const [projectShow, setProjectShow] = useState(false)
+    const [projectShow, setProjectShow] = useState(true)
     const [filterKey, setFilterKey] = useState([
         false,
         false,
@@ -24,11 +24,24 @@ const Home = () => {
         false
     ])
 
+    function renderProjects() {
+        const copyFilter = []
+        PROJECTS.forEach((project, index1) => {
+            copyFilter.push({
+                id: project.id,
+                title: project.title,
+                pic: project.pic
+            })
+        })
+        return copyFilter
+    }
+    
+
     function imageClick(data, skill, article, e) {
         const copy = [...filterKey]
         const copyClick = [...clicked]
         const copyFilter = []
-        const copyShow = [false, false, false, false, false, false]
+        const copyShow = show
 
         copy[data] = !filterKey[data]
         setFilterKey(copy)
@@ -49,6 +62,7 @@ const Home = () => {
             })
             project.list.some((data, index) => {
                 if (!data && copy[index]) {
+                    copyShow[index1] = false
                     return true
                 }
                 if (index === 5) {
@@ -56,7 +70,10 @@ const Home = () => {
                 }
                 return false
             })
+            console.log(project)
         })
+        
+        console.log(filterList)
         setFilterList(copyFilter)
         setShow(copyShow)
         setSkill(skill)
