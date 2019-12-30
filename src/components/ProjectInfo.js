@@ -109,7 +109,7 @@ const ProjectInfo = props => {
                     <ProjectPreview
                         url={props.pic[indexWithinRange(prevIndex - 1)]}
                         className='projectPreviewShow left'
-                        toggleMove={startAnimation ? 'appear' : null}
+                        toggleMove={startAnimation ? 'leftAppear' : null}
                     />
                 ) : null}
                 <ProjectPreview
@@ -119,7 +119,7 @@ const ProjectInfo = props => {
                         startAnimation
                             ? showLeft
                                 ? 'moveRightGrow'
-                                : 'disappear'
+                                : 'leftDisappear'
                             : null
                     }
                     onAnimationEnd={onAnimationEnd}
@@ -142,7 +142,7 @@ const ProjectInfo = props => {
                     toggleMove={
                         startAnimation
                             ? showLeft
-                                ? 'disappear'
+                                ? 'rightDisappear'
                                 : 'moveLeftGrow'
                             : null
                     }
@@ -152,7 +152,7 @@ const ProjectInfo = props => {
                     <ProjectPreview
                         url={props.pic[indexWithinRange(nextIndex + 1)]}
                         className='projectPreviewShow right'
-                        toggleMove={startAnimation ? 'appear' : null}
+                        toggleMove={startAnimation ? 'rightAppear' : null}
                     />
                 ) : null}
             </div>

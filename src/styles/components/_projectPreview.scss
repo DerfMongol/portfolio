@@ -1,11 +1,14 @@
 .toggleProjectPics,
 .previewContainer {
     display: flex;
-    position: relative;
     width: 100%;
     height: 400px;
     justify-content: center;
     align-items: center;
+}
+
+.toggleProjectPics {
+    position: relative;
 }
 
 .arrowsContainer {
@@ -35,7 +38,7 @@
     width: 90%;
     height: 100%;
     color: white;
-    transform: translate(0%) scale(1);
+    transform: translate(0) scale(1);
 }
 
 .projectPreview,
@@ -46,6 +49,7 @@
     width: 90%;
     height: 100%;
     color: white;
+    position: absolute;
 }
 
 .projectPreview {
@@ -56,18 +60,13 @@
     z-index: 4;
 }
 
-.right,
-.left {
-    position: absolute;
-    transform: scale(0.22);
-}
-
 .right {
-    margin-left: 75%;
+    transform: translate(40%) scale(0.22);
+    
 }
 
 .left {
-    margin-right: 75%;
+    transform: translate(-40%) scale(0.22);
 }
 
 
@@ -81,79 +80,107 @@
     }
     @keyframes moveRightGrow {
         0% {
-            transform: translate(0) scale(0.22);
+            transform: translate(-40%) scale(0.22);
             z-index: 5;
         }
 
         100% {
-            transform: translate(41.7%) scale(1);
+            transform: translate(0) scale(1);
             z-index: 6;
         }
     }
 
     @keyframes moveLeftGrow {
         0% {
-            transform: translate(0) scale(0.22);
+            transform: translate(40%) scale(0.22);
             z-index: 5;
         }
 
         100% {
-            transform: translate(-41.7%) scale(1);
+            transform: translate(0) scale(1);
             z-index: 6;
         }
     }
 
     @keyframes moveRightShrink {
         0% {
-            transform: translate(0%) scale(1);
+            transform: translate(0) scale(1);
             z-index: 6;
         }
 
         100% {
-            transform: translate(41.7%) scale(0.22);
+            transform: translate(40%) scale(0.22);
             z-index: 5;
         }
     }
 
     @keyframes moveLeftShrink {
         0% {
-            transform: translate(0%) scale(1);
+            transform: translate(0) scale(1);
             z-index: 6;
         }
 
         100% {
-            transform: translate(-41.7%) scale(0.22);
+            transform: translate(-40%) scale(0.22);
             z-index: 5;
         }
     }
 
-    @keyframes disappear {
+    @keyframes rightDisappear {
         0% {
             z-index: 5;
             opacity: 1;
-            transform: scale(0.22);
+            transform: translate(40%) scale(0.22);
         }
 
         100% {
             z-index: 4;
             opacity: 0;
-            transform: scale(0);
+            transform: translate(40%) scale(0);
         }
     }
 
-    @keyframes appear {
+    @keyframes rightAppear {
         0% {
             z-index: 4;
             opacity: 0;
-            transform: scale(0);
+            transform: translate(40%) scale(0);
         }
 
         100% {
             z-index: 5;
             opacity: 1;
-            transform: scale(0.22);
+            transform: translate(40%) scale(0.22);
         }
     }
+    @keyframes leftDisappear {
+        0% {
+            z-index: 5;
+            opacity: 1;
+            transform: translate(-40%) scale(0.22);
+        }
+
+        100% {
+            z-index: 4;
+            opacity: 0;
+            transform: translate(-40%) scale(0);
+        }
+    }
+
+    @keyframes leftAppear {
+        0% {
+            z-index: 4;
+            opacity: 0;
+            transform: translate(-40%) scale(0);
+        }
+
+        100% {
+            z-index: 5;
+            opacity: 1;
+            transform: translate(-40%) scale(0.22);
+        }
+    }
+
 }
 
 @media (max-width: 480px) {
