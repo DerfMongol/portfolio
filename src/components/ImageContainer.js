@@ -2,6 +2,7 @@ import React from 'react'
 
 const ImageContainer = props => {
     return (
+        
         <div
             className={`${props.firstClass} ${props.clicked[props.index]}`}
             onClick={() =>

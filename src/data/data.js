@@ -71,5 +71,5 @@ export const SKILLS = [
     new Skill(2, logos.js, 'JavaScript', 'a', 'image'),
     new Skill(3, logos.react, 'React', 'a', 'image'),
     new Skill(4, logos.reactNat, 'React Native', 'a', 'image'),
-    new Skill(5, logos.express, 'Express', 'an', 'express')
+    new Skill(5, logos.express, 'Express', 'an', 'image')
 ]

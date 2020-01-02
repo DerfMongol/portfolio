@@ -15,6 +15,7 @@ const Home = () => {
     const [overlayAnimation, setOverlayAnimation] = useState(false)
     const [projectId, setProjectId] = useState()
     const [projectShow, setProjectShow] = useState(true)
+    const [clickOne, setClickOne] = useState(true)
     const [filterKey, setFilterKey] = useState([
         false,
         false,
@@ -35,7 +36,6 @@ const Home = () => {
         })
         return copyFilter
     }
-    
 
     function imageClick(data, skill, article, e) {
         const copy = [...filterKey]
@@ -72,13 +72,14 @@ const Home = () => {
             })
             console.log(project)
         })
-        
+
         console.log(filterList)
         setFilterList(copyFilter)
         setShow(copyShow)
         setSkill(skill)
         setArticle(article)
         setProjectShow(true)
+        setClickOne(false)
     }
 
     function imageHover(skill, article) {
@@ -101,8 +102,12 @@ const Home = () => {
                 <div className='skill'>{skill}</div>
                 <div className='sentence'>Developer.</div>
             </div>
-            <div className="skillContainer">
+
+            <div className='skillContainer'>
                 <div className='skills'>
+                    {clickOne ? (
+                        <div className='clickOne'>Click to Filter: </div>
+                    ) : null}
                     {SKILLS.map(skill => (
                         <ImageContainer
                             key={skill.id}
