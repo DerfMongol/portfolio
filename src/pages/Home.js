@@ -16,6 +16,7 @@ const Home = () => {
     const [projectId, setProjectId] = useState()
     const [projectShow, setProjectShow] = useState(true)
     const [clickOne, setClickOne] = useState(true)
+    const [afterClickOne, setAfterClickOne] = useState(true)
     const [filterKey, setFilterKey] = useState([
         false,
         false,
@@ -105,9 +106,16 @@ const Home = () => {
 
             <div className='skillContainer'>
                 <div className='skills'>
-                    {clickOne ? (
-                        <div className='clickOne'>Click to Filter: </div>
-                    ) : null}
+                    <div
+                        className='clickOne'
+                        style={{
+                            animation: `${clickOne ? '' : 'exitClickOne'} 0.7s`,
+                            width: `${clickOne ? '150px' : '0'}`,
+                        }}
+                        onAnimationEnd={() => setAfterClickOne(false)}
+                    >
+                        {afterClickOne ? 'Press to Filter: ' : ''}
+                    </div>
                     {SKILLS.map(skill => (
                         <ImageContainer
                             key={skill.id}

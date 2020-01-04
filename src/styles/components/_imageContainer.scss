@@ -45,24 +45,34 @@
     }
 
     to {
-        transform: scale(1.1);
+        transform: scale(1.05);
+    }
+}
+
+@keyframes boxShadow {
+    from {
+        box-shadow: none;
+    }
+
+    to {
+        box-shadow: 5px 5px grey;
     }
 }
 
 @media (hover: hover) and (pointer: fine) {
     .image:hover,
     .express:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
         box-shadow: 5px 5px grey;
         cursor: pointer;
-        animation-duration: 0.5s;
-        animation-name: grow;
+        animation-duration: 0.2s;
+        animation-name: grow, boxShadow;
     }
 
     .image:hover img,
     .express:hover img {
-        transform: scale(1.1);
-        animation-duration: 0.5s;
+        transform: scale(1.05);
+        animation-duration: 0.2s;
         animation-name: grow;
     }
 }

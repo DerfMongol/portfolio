@@ -38,14 +38,18 @@
     vertical-align: middle;
 }
 
-.arrow-down {
-    width: 0; 
-    height: 0; 
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid black;
-    text-align: center;
-  }
+@keyframes exitClickOne {
+    0% {
+        font-size: 24px;
+        opacity: 1;
+        width: 150px;
+    }
+    100% {
+        font-size: 0px;
+        opacity: 0;
+        width: 0;
+    }
+}
 
 @media (max-width: 480px) {
     .sentence {
