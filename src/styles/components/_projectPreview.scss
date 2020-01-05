@@ -72,11 +72,11 @@
 
 @media (hover: hover) and (pointer: fine) {
     .projectPicBtn:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
         box-shadow: 5px 5px grey;
         cursor: pointer;
         animation-duration: 0.5s;
-        animation-name: grow;
+        animation-name: grow, boxShadow;
     }
     @keyframes moveRightGrow {
         0% {
