@@ -110,7 +110,7 @@ const Home = () => {
                         className='clickOne'
                         style={{
                             animation: `${clickOne ? '' : 'exitClickOne'} 0.7s`,
-                            width: `${clickOne ? '150px' : '0'}`,
+                            width: `${afterClickOne ? '100px' : '0'}`,
                         }}
                         onAnimationEnd={() => setAfterClickOne(false)}
                     >
