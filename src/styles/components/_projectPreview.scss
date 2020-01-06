@@ -28,6 +28,8 @@
     margin: 5%;
     border-radius: 100%;
     border: 1px solid black;
+    box-shadow: 0;
+    transition: box-shadow 0.2s;
 }
 
 .projectModal {
@@ -76,7 +78,7 @@
         box-shadow: 5px 5px grey;
         cursor: pointer;
         animation-duration: 0.5s;
-        animation-name: grow, boxShadow;
+        animation-name: grow;
     }
     @keyframes moveRightGrow {
         0% {

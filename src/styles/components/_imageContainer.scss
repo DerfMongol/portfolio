@@ -38,6 +38,11 @@
 .clicked {
     background: $light-orange;
 }
+.image,
+.clicked {
+    transition: box-shadow 0.2s;
+    box-shadow: 0;
+}
 
 @keyframes grow {
     from {
@@ -49,16 +54,6 @@
     }
 }
 
-@keyframes boxShadow {
-    from {
-        box-shadow: none;
-    }
-
-    to {
-        box-shadow: 100% 100% grey;
-    }
-}
-
 @media (hover: hover) and (pointer: fine) {
     .image:hover,
     .express:hover {
@@ -66,7 +61,7 @@
         box-shadow: 5px 5px grey;
         cursor: pointer;
         animation-duration: 0.2s;
-        animation-name: grow, boxShadow;
+        animation-name: grow;
     }
 
     .image:hover img,
@@ -88,7 +83,7 @@
         margin: 0;
     }
     .clicked {
-        transform: scale(1.1);
+        transform: scale(1.05);
         box-shadow: 5px 5px grey;
         cursor: pointer;
         animation-duration: 0.5s;
