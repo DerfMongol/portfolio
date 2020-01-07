@@ -3,8 +3,9 @@ import React, { useState } from 'react'
 import ProjectBox from '../components/ProjectBox'
 import ImageContainer from '../components/ImageContainer'
 import ProjectModal from '../components/ProjectModal'
+import Contact from '../components/Contact'
 
-import { PROJECTS, SKILLS } from '../data/data.js'
+import { PROJECTS, SKILLS, CONTACTS } from '../data/data.js'
 
 const Home = () => {
     const [skill, setSkill] = useState('Full Stack Web')
@@ -17,6 +18,7 @@ const Home = () => {
     const [projectShow, setProjectShow] = useState(true)
     const [clickOne, setClickOne] = useState(true)
     const [afterClickOne, setAfterClickOne] = useState(true)
+    const [contactTitle, setContactTitle] = useState('')
     const [filterKey, setFilterKey] = useState([
         false,
         false,
@@ -88,6 +90,10 @@ const Home = () => {
         setArticle(article)
     }
 
+    function imageContact(title) {
+        setContactTitle(title)
+    }
+
     return (
         <div className='container'>
             <ProjectModal
@@ -110,7 +116,7 @@ const Home = () => {
                         className='clickOne'
                         style={{
                             animation: `${clickOne ? '' : 'exitClickOne'} 0.7s`,
-                            width: `${afterClickOne ? '100px' : '0'}`,
+                            width: `${afterClickOne ? '100px' : '0'}`
                         }}
                         onAnimationEnd={() => setAfterClickOne(false)}
                     >
@@ -148,6 +154,25 @@ const Home = () => {
                     </div>
                 ) : null}
             </div>
+            <div className='contactInfo'>
+                <div className='contactTitle'>{`Contact by `}</div>
+                <div className='contactLink'>{contactTitle}</div>
+            </div>
+
+            <div className='contactContainer'>
+                {CONTACTS.map(contact => (
+                    <Contact
+                        key={contact.id}
+                        clicked={clicked}
+                        contactHover={imageContact}
+                        link={contact.link}
+                        pic={contact.pic}
+                        title={contact.title}
+                        isMobile={window.innerWidth <= 760 ? true : false}
+                    />
+                ))}
+            </div>
+            <div className='copyright'>© 2020 Lee Martin.</div>
         </div>
     )
 }

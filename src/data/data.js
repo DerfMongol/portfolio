@@ -1,5 +1,6 @@
 import Project from '../models/project'
 import Skill from '../models/skill'
+import Contact from '../models/contact'
 
 import {
     logos,
@@ -7,7 +8,8 @@ import {
     mealsApp,
     shopApp,
     todoApp,
-    reactSsr
+    reactSsr,
+    contactLogos
 } from './imageData'
 
 export const PROJECTS = [
@@ -72,4 +74,10 @@ export const SKILLS = [
     new Skill(3, logos.react, 'React', 'a', 'image'),
     new Skill(4, logos.reactNat, 'React Native', 'a', 'image'),
     new Skill(5, logos.express, 'Express', 'an', 'image')
+]
+
+export const CONTACTS = [
+    new Contact(0, 'GitHub', 'https://github.com/DerfMongol', contactLogos.github),
+    new Contact(1, 'StackOverflow', 'https://stackoverflow.com/users/8145633/derf-mongrel', contactLogos.stackoverflow),
+    new Contact(2, 'Email', 'mailto:leefredmart@gmail.com', contactLogos.email)
 ]

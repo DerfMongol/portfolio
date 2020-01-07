@@ -33,12 +33,15 @@ import reactSsr8 from '../images/reactssr8.jpg'
 import reactSsr9 from '../images/reactssr9.jpg'
 import reactSsr10 from '../images/reactssr10.jpg'
 
-
 import todoApp1 from '../images/todoApp.jpg'
 import todoApp2 from '../images/todoApp2.jpg'
 import todoApp3 from '../images/todoApp3.jpg'
 
 import underConstruction from '../images/construction.png'
+
+import github from '../images/github.png'
+import stackoverflow from '../images/stackoverflow.png'
+import email from '../images/email.png'
 
 export const logos = {
     html,
@@ -80,3 +83,5 @@ export const reactSsr = [
 export const todoApp = [todoApp1, todoApp2, todoApp3]
 
 export const shopApp = [underConstruction]
+
+export const contactLogos = {github, stackoverflow, email}
