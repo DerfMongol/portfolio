@@ -3,16 +3,14 @@
     justify-content: center;
 }
 
-.contactTitle {
+.contactTitle,
+.contactLink {
     font-size: 40px;
     text-align: center;
     padding: 0 3px;
 }
 
 .contactLink {
-    font-size: 40px;
-    text-align: center;
-    padding: 0 3px;
     color: $dark-orange;
 }
 
@@ -24,4 +22,11 @@
 .copyright {
     text-align: center;
     vertical-align: middle;
+}
+
+@media (max-width: 480px) {
+    .contactTitle,
+    .contactLink {
+        font-size: 28px;
+    }
 }

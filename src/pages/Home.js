@@ -155,7 +155,7 @@ const Home = () => {
                 ) : null}
             </div>
             <div className='contactInfo'>
-                <div className='contactTitle'>{`Contact by `}</div>
+                <div className='contactTitle'>Contact</div>
                 <div className='contactLink'>{contactTitle}</div>
             </div>
 
