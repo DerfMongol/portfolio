@@ -19,6 +19,7 @@ const Home = () => {
     const [clickOne, setClickOne] = useState(true)
     const [afterClickOne, setAfterClickOne] = useState(true)
     const [contactTitle, setContactTitle] = useState('')
+    const [classClicked, setClassClicked] = useState(['','',''])
     const [filterKey, setFilterKey] = useState([
         false,
         false,
@@ -91,7 +92,23 @@ const Home = () => {
     }
 
     function imageContact(title) {
+        const eraseContact = ['','','']
+        setClassClicked(eraseContact)
         setContactTitle(title)
+    }
+
+    function contactClick(index, title) {
+        const copyContact = ['','','']
+        if (classClicked[index] === '') {
+            copyContact[index] = 'clicked'
+            
+        } else {
+            copyContact[index] = ''
+        }
+        setClassClicked(copyContact)
+        setContactTitle(title)
+
+
     }
 
     return (
@@ -165,9 +182,12 @@ const Home = () => {
                         key={contact.id}
                         clicked={clicked}
                         contactHover={imageContact}
+                        contactClick={contactClick}
+                        classClicked={classClicked}
                         link={contact.link}
                         pic={contact.pic}
                         title={contact.title}
+                        index={contact.id}
                         isMobile={window.innerWidth <= 760 ? true : false}
                     />
                 ))}
