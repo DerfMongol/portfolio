@@ -12,4 +12,13 @@
 .header li a {
     color: inherit;
     text-decoration: none;
+    padding: 10px;
+    border-bottom: 2px black solid;
+    font-weight: bold;
+}
+
+.header a:hover {
+    background-color: $light-orange;
+    border: hidden;
+    border-radius: 10px;
 }
